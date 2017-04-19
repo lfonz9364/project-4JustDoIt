@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <%= form_tag '/session', method: :delete do %>
+      <input type="hidden" class="id" data-id=<%= current_user.id%> >
+        <nav class="login-nav">
+          <p>Welcome <%= current_user.first_name %></p>
+          <button class="logout-btn">Logout</button>
+        </nav>
+      <% end %>
+    <% end %>
+
+
     <%= yield %>
   </body>
 </html>
