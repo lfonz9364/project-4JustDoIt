@@ -1,39 +1,39 @@
 <% @cars.each do |car|%>
-  <div>
-    <span>Driver:
-      <%= car.user.first_name %>
-    </span>
-    <span>Additional Details:
-      <%= car.description %>
-    </span>
-    <span>No. of Seat Available:
-      <%= car.seat_number - car.passenger.length %>
-    </span>
-    <span>Meeting Place:
-      <%= car.meeting_point %>
-    </span>
-    <span>
-      Smoker Friendly:
-      <%= car.smoker_friendly%>
-    </span>
-    <span>Date:
-      <%= car.date %>
-    </span>
-    <span>Time:
-      <%= car.time.strftime("%I:%M%p") %>
-    </span>
+  <% unless car.seat_number <= car.passenger.length %>
+    <div>
+      <span>Driver:
+        <%= car.user.first_name %>
+      </span>
+      <span>Additional Details:
+        <%= car.description %>
+      </span>
+      <span>No. of Seat Available:
+        <%= car.seat_number - car.passenger.length %>
+      </span>
+      <span>Meeting Place:
+        <%= car.meeting_point %>
+      </span>
+      <span>
+        Smoker Friendly:
+        <%= car.smoker_friendly%>
+      </span>
+      <span>Date:
+        <%= car.date %>
+      </span>
+      <span>Time:
+        <%= car.time.strftime("%I:%M%p") %>
+      </span>
 
-    <% if current_user.car == nil %>
-      <% if current_user.passenger == nil %>
-        <a href="/cars/join/<%= car.id %>">I want to join</a>
-      <% else %>
-        <% if current_user.passenger.car_id == car.id %>
-          <a href="/cars/unjoin">I change my mind</a>
+      <% if current_user.car == nil %>
+        <% if current_user.passenger == nil %>
+          <a href="/cars/join/<%= car.id %>">I want to join</a>
+        <% else %>
+          <% if current_user.passenger.car_id == car.id %>
+            <a href="/cars/unjoin">I change my mind</a>
+          <% end %>
         <% end %>
       <% end %>
-    <% elsif current_user.car.id == car.id %>
-        <a href="/cars/destroy" data-method="delete">Delete</a>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 <% end %>
 <a href="/home">Back</a>
