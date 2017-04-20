@@ -1,0 +1,6 @@
+<p>filter</p>
+<form action="/cars/filtered" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Suburb</label>
+  <input type="text" name="suburbfilter">
+  <button type="button" name="button">Find a match!</button>

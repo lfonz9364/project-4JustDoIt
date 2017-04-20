@@ -1,4 +1,8 @@
+
+<a href="/cars/filter">Filter</a>
+
 <% @cars.each do |car|%>
+
   <% unless car.seat_number <= car.passenger.length %>
     <div>
       <span>Driver:
@@ -12,6 +16,9 @@
       </span>
       <span>Meeting Place:
         <%= car.meeting_point %>
+      </span>
+      <span>Suburb:
+        <%= car.suburb %>
       </span>
       <span>
         Smoker Friendly:
@@ -36,4 +43,5 @@
     </div>
   <% end %>
 <% end %>
+
 <a href="/home">Back</a>

@@ -71,4 +71,9 @@ class CarsController < ApplicationController
     passenger.save
     redirect_to "/cars/show/#{ car_id }"
   end
+
+  def filter
+    @cars = Car.where(params[:suburb]=== 'cbd')
+    redirect_to "/cars/filtered"
+  end
 end
