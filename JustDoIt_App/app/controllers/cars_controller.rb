@@ -36,4 +36,9 @@ class CarsController < ApplicationController
     passenger = Passenger.find_by(user_id: session[:id]).destroy
     redirect_to '/cars'
   end
+
+  def show
+    @car = Car.find(params[:id])
+    @passengers = @car.passenger
+  end
 end

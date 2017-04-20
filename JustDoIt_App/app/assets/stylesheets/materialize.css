@@ -6,3 +6,8 @@ body {
 h1 {
   text-align: center;
 }
+
+span {
+  display:block;
+  boder: 1px solid white;
+}

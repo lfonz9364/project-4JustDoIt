@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/cars/join/:id', to: 'cars#join'
   get '/cars/unjoin', to: 'cars#unjoin'
   delete '/cars/destroy', to: 'cars#destroy'
+  get '/cars/show/:id', to: 'cars#show'
 
   get '/users/new', to: 'users#new'
   post '/users/', to: 'users#create'

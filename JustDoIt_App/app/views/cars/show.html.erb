@@ -1,0 +1,30 @@
+<div>
+  <span>Driver:
+    <%= @car.user.first_name %>
+  </span>
+  <span>Additional Details:
+    <%= @car.description %>
+  </span>
+  <span>No. of Seat Available:
+    <%= @car.seat_number - @car.passenger.length %>
+  </span>
+  <span>Meeting Place:
+    <%= @car.meeting_point %>
+  </span>
+  <span>
+    Smoker Friendly:
+    <%= @car.smoker_friendly%>
+  </span>
+  <span>Date:
+    <%= @car.date %>
+  </span>
+  <span>Time:
+    <%= @car.time.strftime("%I:%M%p") %>
+  </span>
+  <span>
+    Passenger List:
+    <% @passengers.each do |passenger| %>
+      <span><%= passenger.user.first_name %></span>
+    <% end %>
+  </span>
+</div>
