@@ -67,8 +67,7 @@ class CarsController < ApplicationController
   def remove
     passenger = Passenger.find(params[:id])
     car_id = passenger.car_id
-    passenger.car_id = ''
-    passenger.save
+    passenger.destroy
     redirect_to "/cars/show/#{ car_id }"
   end
 end
