@@ -1,8 +1,72 @@
-body {
-  background-color: #304FFE;
-  background-position: center;
+/*.login-pg {
+  text-align: center;
+  margin-top: 100px;
 }
 
-h1 {
+.email {
+  margin-left: -146px;
+}
+
+.password-label {
+  margin-left: -119px;
+}
+
+.login-button {
+  margin-left: -150px;
+  padding: 0;
+}
+
+.sign-link {
+  margin-right: 145px;
+}
+
+a {
+  text-transform: none;
+}
+
+h1, .register {
   text-align: center;
 }
+
+.name-md {
+  margin-left: -110px;
+}
+.fixed-name {
+  margin-left: -119px;
+}
+
+.short-name {
+  margin-left: -149px;
+}
+.phone-name {
+  margin-left: -146px;
+}
+
+.fixed-btn {
+  margin-left: -63px
+}
+.back-link {
+  margin-left: -160px;
+}
+
+/*================*/
+/*user session* application.html.erb */
+
+/*p {
+  float: left;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-left: 24px;
+}
+.initial {
+  color: red;
+}
+
+.logout-btn {
+  float: right;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-right: 23px;
+}*/*/
