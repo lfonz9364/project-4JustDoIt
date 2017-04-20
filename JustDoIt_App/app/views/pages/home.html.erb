@@ -1,1 +1,11 @@
-<h1>you are in home</h1>
+<a href=""></a>
+
+<div>
+  <h1>Car Pool</h1>
+  <% if current_user.passenger == nil && current_user.car == nil %>
+    <a href="/cars/new">I have a empty seat</a>
+    <a href="/cars">I need a lift</a>
+  <% else %>
+    <a href="/message">List of Cars Available</a>
+  <% end %>
+</div>

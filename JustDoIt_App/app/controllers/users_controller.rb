@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     user.password = params[:password]
 
     if user.save
-      redirect_to '/session'
+      redirect_to '/'
     else
       redirect_to '/users/new'
     end
