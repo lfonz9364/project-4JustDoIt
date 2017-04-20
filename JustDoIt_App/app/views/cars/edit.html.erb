@@ -1,0 +1,31 @@
+<form action="/cars/edit/<%= current_user.car.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>No. of Seat Available</label>
+  <input type="text" name="seat_number" value="<%= current_user.car.seat_number %>">
+
+  <label>Meeting Point</label>
+  <input type="text" name="meeting_point" value="<%= current_user.car.meeting_point %>">
+
+  <label>Suburb</label>
+  <select name="suburb">
+    <option value="<%= current_user.car.suburb %>"><%= current_user.car.suburb %></option>
+    <option value=""></option>
+  </select>
+
+  <label>Smoker Friendly</label>
+  <select name="smoker_friendly">
+    <option value="no">No</option>
+    <option value="yes">Yes</option>
+  </select>
+
+  <label>date</label>
+  <input type="text" name="date" value="<%= current_user.car.date %>">
+
+  <label>time</label>
+  <input type="text" name="time" value="<%= current_user.car.time %>">
+
+  <label>Additional Details</label>
+  <textarea name="description" rows="8" cols="80"><%= current_user.car.description %></textarea>
+  <button>Post</button>
+</form>
+<a href="/cars/show/<%= current_user.car.id %>">Cancel</a>

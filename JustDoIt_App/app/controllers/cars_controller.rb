@@ -12,6 +12,7 @@ class CarsController < ApplicationController
     car.smoker_friendly = params[:smoker_friendly]
     car.date = params[:date]
     car.time = params[:time]
+
     if car.save
       redirect_to '/cars'
     else
@@ -35,5 +36,38 @@ class CarsController < ApplicationController
   def unjoin
     passenger = Passenger.find_by(user_id: session[:id]).destroy
     redirect_to '/cars'
+  end
+
+  def show
+    @car = Car.find(params[:id])
+    @passengers = @car.passenger
+  end
+
+  def edit
+  end
+
+  def update
+    car = Car.find(params[:id])
+    car.user_id = session[:id]
+    car.description = params[:description]
+    car.seat_number = params[:seat_number]
+    car.meeting_point = params[:meeting_point]
+    car.suburb = params[:suburb]
+    car.smoker_friendly = params[:smoker_friendly]
+    car.date = params[:date]
+    car.time = params[:time]
+
+    if car.save
+      redirect_to "/cars/show/#{ car.id }"
+    else
+      redirect_to "/cars/edit/#{ car.id }"
+    end
+  end
+
+  def remove
+    passenger = Passenger.find(params[:id])
+    car_id = passenger.car_id
+    passenger.destroy
+    redirect_to "/cars/show/#{ car_id }"
   end
 end
