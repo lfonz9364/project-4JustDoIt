@@ -8,6 +8,7 @@ class CarsController < ApplicationController
     car.description = params[:description]
     car.seat_number = params[:seat_number]
     car.meeting_point = params[:meeting_point]
+    car.suburb = params[:suburb]
     car.smoker_friendly = params[:smoker_friendly]
     car.date = params[:date]
     car.time = params[:time]

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170419135631) do
     t.integer  "user_id"
     t.integer  "seat_number"
     t.text     "meeting_point"
+    t.string   "suburb"
     t.boolean  "smoker_friendly"
     t.date     "date"
     t.time     "time"
