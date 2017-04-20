@@ -11,7 +11,6 @@ Passenger.destroy_all
 Car.destroy_all
 User.destroy_all
 
-
 user1 = User.create(first_name: 'Barry', last_name: 'Tabios', email: 'barry.tabios@gmail.com', phone: '0407697747', company: 'General Assembly', password: 'password');
 user2 = User.create(first_name: 'Marta', last_name: 'Scaramella', email: 'marta.scaramella@gmail.com', phone: '0422094711', company: 'General Assembly', password: 'password');
 user3 = User.create(first_name: 'Gat', last_name: 'Tholbok', email: 'gat.tholbok@gmail.com', phone: '0411351278', company: 'General Assembly', password: 'password');
@@ -26,7 +25,6 @@ passenger1 = Passenger.create(user_id: 3, car_id:1);
 passenger2 = Passenger.create(user_id: 4, car_id:1);
 passenger3 = Passenger.create(user_id: 5, car_id:2);
 passenger4 = Passenger.create(user_id: 6, car_id:2);
-
 
 comment1 = Comment.create(body: 'lovely person', car_id: 1, passenger_id: 1);
 comment2 = Comment.create(body: 'pleasant ride', car_id: 1, passenger_id: 2);
