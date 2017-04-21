@@ -13,6 +13,9 @@ class CarsController < ApplicationController
     car.date = params[:date]
     car.time = Time.local(params[:date],params[:time])
 
+    coordinate = Geocoder.coordinates(params[:meeting_point] + params[:suburb])
+    byebug
+
     if car.save
       redirect_to "/cars/show/#{ car.id }"
     else
