@@ -1,31 +1,40 @@
-<form action="/cars" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label>No. of Seat Available</label>
-  <input type="text" name="seat_number">
-
-  <label>Meeting Point</label>
-  <input type="text" name="meeting_point">
-
-  <label>Suburb</label>
-  <select name="suburb">
-    <option value=""></option>
-    <option value=""></option>
-  </select>
-
-  <label>Smoker Friendly</label>
-  <select name="smoker_friendly">
-    <option value="no">No</option>
-    <option value="yes">Yes</option>
-  </select>
-
-  <label>date</label>
-  <input type="text" name="date">
-
-  <label>time</label>
-  <input type="text" name="time">
-
-  <label>Additional Details</label>
-  <textarea name="description" rows="8" cols="80"></textarea>
-  <button>Post</button>
-</form>
-<a href="/home">Cancel</a>
+<div class="container">
+  <form action="/cars" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label>No. of Seat Available</label>
+    <br>
+    <input type="text" name="seat_number">
+    <br>
+    <label>Meeting Point</label>
+    <br>
+    <input type="text" name="meeting_point">
+    <br>
+    <label>Suburb</label>
+    <select name="suburb">
+      <option value=""></option>
+      <option value=""></option>
+    </select>
+    <br>
+    <label>Smoker Friendly</label>
+    <select name="smoker_friendly">
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select>
+    <br>
+    <label>date</label>
+    <br>
+    <input type="text" name="date">
+    <br>
+    <label>time</label>
+    <br>
+    <input type="text" name="time">
+    <br>
+    <label>Additional Details</label>
+    <br>
+    <textarea name="description" rows="8" cols="80"></textarea>
+    <button class="make-post">Post</button>
+  </form>
+  <button class="cancel-post">
+    <a href="/home">Cancel</a>
+  </button>
+</div>

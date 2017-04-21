@@ -6,7 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
@@ -15,7 +16,7 @@
       <%= form_tag '/session', method: :delete do %>
       <input type="hidden" class="id" data-id=<%= current_user.id%> >
         <nav class="login-nav">
-          <p>Welcome <%= current_user.first_name %></p>
+          <p class="welcome-user">Welcome <span class="initial"><%= current_user.first_name %></span></p>
           <button class="logout-btn">Logout</button>
         </nav>
       <% end %>
