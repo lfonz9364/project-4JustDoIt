@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get '/home', to: 'pages#home'
   get '/message', to: 'pages#message'
 
+  get '/map', to: 'maps#map'
+
   root 'sessions#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
