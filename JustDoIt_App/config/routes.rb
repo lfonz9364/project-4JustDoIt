@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get '/cars/show/:id', to: 'cars#show'
   get '/cars/edit/:id', to: 'cars#edit'
   post '/cars/edit/:id', to: 'cars#update'
-  get '/cars/remove/:id', to: 'cars#remove' 
+  get '/cars/remove/:id', to: 'cars#remove'
+  get '/cars/filter', to: 'cars#filter'
+  post '/cars/filtering', to: 'cars#filtering'
+
 
   get '/users/new', to: 'users#new'
   post '/users/', to: 'users#create'

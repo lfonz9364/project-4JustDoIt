@@ -70,4 +70,13 @@ class CarsController < ApplicationController
     passenger.destroy
     redirect_to "/cars/show/#{ car_id }"
   end
+
+  def filter
+  end
+
+  def filtering
+    @cars = Car.where(suburb: params[:suburbfilter])
+    # binding.pry
+    render :filtered
+  end
 end
