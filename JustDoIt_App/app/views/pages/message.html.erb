@@ -44,6 +44,33 @@
 
 <a href="/home">Back</a>
 
-<% @cars.each do |car| %>
+<script>
+
+// function getLocation() {
+//     if (navigator.geolocation) {
+
+//     } else {
+//         x.innerHTML = "Geolocation is not supported by this browser.";
+//     }
+// }
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+
+console.log(navigator.geolocation)
+
+
+
+</script>
+
+<!-- <% @cars.each do |car| %>
    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{car.latitude}%2C#{car.longitude}"%>
-<%end %>
+<%end %> -->
+
+<% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+<% @cars.each do |car| %>
+<% my_url += "&markers=#{car.latitude}%2C#{car.longitude}" %>
+<% end %>
+<%= image_tag my_url %>
