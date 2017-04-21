@@ -13,3 +13,115 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .login-pg {
+   text-align: center;
+   margin-top: 100px;
+ }
+
+ .email {
+   margin-left: -146px;
+ }
+
+ .password-label {
+   margin-left: -119px;
+ }
+
+ .login-button {
+   margin-left: -150px;
+   padding: 0;
+ }
+
+ .sign-link {
+   margin-right: 145px;
+ }
+
+ a {
+   text-transform: none;
+ }
+
+ h1, .register {
+   text-align: center;
+ }
+
+ .name-md {
+   margin-left: -110px;
+ }
+ .fixed-name {
+   margin-left: -119px;
+ }
+
+ .short-name {
+   margin-left: -149px;
+ }
+ .phone-name {
+   margin-left: -146px;
+ }
+
+ .fixed-btn {
+   margin-left: -63px
+ }
+ .back-link {
+   margin-left: -160px;
+ }
+
+ /*================*/
+ /*user session* application.html.erb */
+
+ p {
+   float: left;
+   color: black;
+   text-transform: uppercase;
+   font-weight: 600;
+   margin-top: 20px;
+   margin-left: 24px;
+ }
+ .initial {
+   color: red;
+ }
+
+ .logout-btn {
+   float: right;
+   text-transform: uppercase;
+   margin-top: 20px;
+   margin-right: 23px;
+ }
+
+.post-car {
+   text-align: center;
+   float: none;
+   position: relative;
+   display: inline-flex;
+   margin-top: 140px;
+}
+
+.hitch-ride {
+   text-align: center;
+   float: none;
+   position: relative;
+   display: inline-flex;
+   margin-top: 160px;
+   margin-bottom: 0px;
+   margin-left: 100px;
+}
+
+.home-h1 {
+   margin-top: -84px;
+   font-weight: normal;
+   text-align: left;
+   margin-left: 135px
+}
+
+.container {
+   color: brown;
+   padding: 3px;
+   margin: 7px;
+   margin-top: 14px;
+   display: inline-flex;
+}
+ .cancel-post {
+   color: black;
+   border: 10px;
+   height: 33px
+}
