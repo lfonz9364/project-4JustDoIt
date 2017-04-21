@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Comment.destroy_all
 Passenger.destroy_all
 Car.destroy_all
 User.destroy_all
+Comment.destroy_all
 
 user1 = User.create(first_name: 'Barry', last_name: 'Tabios', email: 'barry.tabios@gmail.com', phone: '0407697747', company: 'General Assembly', password: 'password');
 user2 = User.create(first_name: 'Marta', last_name: 'Scaramella', email: 'marta.scaramella@gmail.com', phone: '0422094711', company: 'General Assembly', password: 'password');
@@ -26,7 +26,7 @@ passenger2 = Passenger.create(user_id: 4, car_id:1);
 passenger3 = Passenger.create(user_id: 5, car_id:2);
 passenger4 = Passenger.create(user_id: 6, car_id:2);
 
-comment1 = Comment.create(body: 'lovely person', car_id: 1, passenger_id: 1);
-comment2 = Comment.create(body: 'pleasant ride', car_id: 1, passenger_id: 2);
-comment3 = Comment.create(body: 'definitely will ride with this person again ', car_id: 2, passenger_id: 3);
-comment4 = Comment.create(body: 'clean car', car_id: 2, passenger_id: 4);
+comment1 = Comment.create(body: 'lovely person', car_id: 1, user_id: 1);
+comment2 = Comment.create(body: 'pleasant ride', car_id: 1, user_id: 2);
+comment3 = Comment.create(body: 'definitely will ride with this person again ', car_id: 2, user_id: 3);
+comment4 = Comment.create(body: 'clean car', car_id: 2, user_id: 4);

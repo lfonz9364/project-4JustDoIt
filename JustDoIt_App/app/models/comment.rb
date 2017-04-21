@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
   belongs_to :car
-  belongs_to :passenger
+  belongs_to :user
 end
