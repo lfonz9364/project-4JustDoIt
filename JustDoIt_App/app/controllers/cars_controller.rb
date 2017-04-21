@@ -11,7 +11,7 @@ class CarsController < ApplicationController
     car.suburb = params[:suburb]
     car.smoker_friendly = params[:smoker_friendly]
     car.date = params[:date]
-    car.time = Time.local(params[:time])
+    car.time = Time.local(params[:date],params[:time])
 
     if car.save
       redirect_to "/cars/show/#{ car.id }"
