@@ -1,4 +1,5 @@
 class MapsController < ApplicationController
+
   def map
     if params[:start_address].present?
       Geocoder.configure(:units => :km)

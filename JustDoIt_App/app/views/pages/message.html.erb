@@ -43,3 +43,7 @@
 <% end %>
 
 <a href="/home">Back</a>
+
+<% @cars.each do |car| %>
+   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{car.latitude}%2C#{car.longitude}"%>
+<%end %>

@@ -12,13 +12,14 @@ class CarsController < ApplicationController
     car.smoker_friendly = params[:smoker_friendly]
     date = params[:date].split('-')
     time = params[:time].split(':')
-    byebug
     year = date[0].to_i
     month = date[1].to_i
     day = date[2].to_i
     hour = time[0].to_i
     min = time[1].to_i
     car.date_time = Time.gm(year, month, day, hour, min)
+
+    coordinate = Geocoder.coordinates(params[:meeting_point] + params[:suburb])
 
     if car.save
       redirect_to "/cars/show/#{ car.id }"
