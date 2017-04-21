@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170420105626) do
     t.integer  "seat_number"
     t.text     "meeting_point"
     t.boolean  "smoker_friendly"
+    t.string   "suburb"
     t.date     "date"
     t.time     "time"
     t.text     "description"
@@ -31,22 +32,11 @@ ActiveRecord::Schema.define(version: 20170420105626) do
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "car_id"
-    t.integer  "passenger_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["car_id"], name: "index_comments_on_car_id", using: :btree
-    t.index ["passenger_id"], name: "index_comments_on_passenger_id", using: :btree
-  end
-
-  create_table "drivers", force: :cascade do |t|
     t.integer  "user_id"
-    t.text     "body"
-    t.integer  "no_of_passenger"
-    t.text     "meeting_place"
-    t.datetime "date"
-    t.datetime "time"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_comments_on_car_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "maps", force: :cascade do |t|
@@ -80,7 +70,7 @@ ActiveRecord::Schema.define(version: 20170420105626) do
 
   add_foreign_key "cars", "users"
   add_foreign_key "comments", "cars"
-  add_foreign_key "comments", "passengers"
+  add_foreign_key "comments", "users"
   add_foreign_key "passengers", "cars"
   add_foreign_key "passengers", "users"
 end
