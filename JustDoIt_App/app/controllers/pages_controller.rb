@@ -5,4 +5,5 @@ class PagesController < ApplicationController
   def message
     @cars = Car.all
   end
+
 end
