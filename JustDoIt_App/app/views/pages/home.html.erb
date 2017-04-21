@@ -1,13 +1,12 @@
-<a href=""></a>
 
-<div>
   <h1>Car Pool</h1>
   <% if current_user.passenger == nil && current_user.car == nil %>
-    <a href="/cars/new">I have a empty seat</a>
-    <a href="/cars">I need a lift</a>
-  <% elsif current_user.car != nil %>
+    <div class="post-car">
+      <a href="/cars/new">I have a empty seat</a>
+      <a href="/cars">I need a lift</a>
+    </div>
     <a href="/cars/show/<%= current_user.car.id %>">Carpool Info</a>
   <% else %>
-    <a href="/message">List of Cars Available</a>
+  <a href="/message">List of Cars Available</a>
   <% end %>
-</div>
+<h1 class="home-h1">Car Pool</h1>
