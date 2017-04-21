@@ -7,7 +7,7 @@ class CreateCars < ActiveRecord::Migration[5.0]
       t.string :suburb
       t.boolean :smoker_friendly
       t.date :date
-      t.strftime("%I:%M%p") :time
+      t.time :time
       t.text :description
 
       t.timestamps
