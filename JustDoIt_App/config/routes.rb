@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   post '/cars/edit/:id', to: 'cars#update'
   get '/cars/remove/:id', to: 'cars#remove'
   get '/cars/filter', to: 'cars#filter'
-  post '/cars/filtered', to: 'cars#filter'
+  post '/cars/filtering', to: 'cars#filtering'
+
 
   get '/users/new', to: 'users#new'
   post '/users/', to: 'users#create'

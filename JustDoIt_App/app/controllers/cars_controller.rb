@@ -73,7 +73,11 @@ class CarsController < ApplicationController
   end
 
   def filter
-    @cars = Car.where(params[:suburb]=== 'cbd')
-    redirect_to "/cars/filtered"
+  end
+
+  def filtering
+    @cars = Car.where(suburb: params[:suburbfilter])
+    # @cars = Car.all
+    render :filtered
   end
 end
