@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419135631) do
+ActiveRecord::Schema.define(version: 20170420105626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20170419135631) do
     t.integer  "user_id"
     t.integer  "seat_number"
     t.text     "meeting_point"
-    t.string   "suburb"
     t.boolean  "smoker_friendly"
     t.date     "date"
     t.time     "time"
@@ -32,11 +31,31 @@ ActiveRecord::Schema.define(version: 20170419135631) do
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "car_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "passenger_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["car_id"], name: "index_comments_on_car_id", using: :btree
-    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+    t.index ["passenger_id"], name: "index_comments_on_passenger_id", using: :btree
+  end
+
+  create_table "drivers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "body"
+    t.integer  "no_of_passenger"
+    t.text     "meeting_place"
+    t.datetime "date"
+    t.datetime "time"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "maps", force: :cascade do |t|
+    t.string   "start_address"
+    t.string   "destination_address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "passengers", force: :cascade do |t|
@@ -61,7 +80,7 @@ ActiveRecord::Schema.define(version: 20170419135631) do
 
   add_foreign_key "cars", "users"
   add_foreign_key "comments", "cars"
-  add_foreign_key "comments", "users"
+  add_foreign_key "comments", "passengers"
   add_foreign_key "passengers", "cars"
   add_foreign_key "passengers", "users"
 end

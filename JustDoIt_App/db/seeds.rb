@@ -19,7 +19,7 @@ user5 = User.create(first_name: 'Daniel', last_name: 'Tsui', email: 'dt@ga.com',
 user6 = User.create(first_name: 'Kasun', last_name: 'Maldeni', email: 'kasun.maldeni@gmail.com', phone: '012345667', company: 'General Assembly', password: 'password');
 
 car1 = Car.create(user_id: 1, seat_number: 3, meeting_point: '6 Roger Court', suburb: 'Rowville', smoker_friendly: false, date:'10-Oct-2017', time: '22:00', description: 'I have seats avaialable');
-car2 = Car.create(user_id: 2, seat_number: 2, meeting_point: '45 William Street', suburb: 'Melbourne', smoker_friendly: true, date:'10-May-2017', time: '08:00', description: 'I have seats avaialable');
+car2 = Car.create(user_id: 2, seat_number: 2, meeting_point: '45 William Street', suburb: 'Melbourne', smoker_friendly: true, date:'10-Oct-2017', time: '08:00', description: 'I have seats avaialable');
 
 passenger1 = Passenger.create(user_id: 3, car_id:1);
 passenger2 = Passenger.create(user_id: 4, car_id:1);
