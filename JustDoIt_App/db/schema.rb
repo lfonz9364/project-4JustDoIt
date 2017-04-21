@@ -39,17 +39,6 @@ ActiveRecord::Schema.define(version: 20170420105626) do
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
-  create_table "drivers", force: :cascade do |t|
-    t.integer  "user_id"
-    t.text     "body"
-    t.integer  "no_of_passenger"
-    t.text     "meeting_place"
-    t.datetime "date"
-    t.datetime "time"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
   create_table "maps", force: :cascade do |t|
     t.string   "start_address"
     t.string   "destination_address"
