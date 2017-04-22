@@ -23,9 +23,8 @@ class CarsController < ApplicationController
     car.latitude = coordinate[0]
     car.longitude = coordinate[1]
 
-    byebug
-
     if car.save
+      # redirect_to '/home'
       redirect_to "/cars/show/#{ car.id }"
     else
       redirect_to "/cars/new"

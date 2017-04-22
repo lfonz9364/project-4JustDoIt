@@ -1,8 +1,9 @@
 
 <a href="/cars/filter">Filter</a>
 
-<% @cars.each do |car|%>
 
+<% i = 0 %>
+<% @cars.each do |car|%>
   <% if car.seat_number >= car.passenger.length %>
       <div>
         <span>Driver:
@@ -28,7 +29,6 @@
           <%= car.date_time.strftime("%I:%M%p") %>
         </span>
 
-
         <% if current_user.car == nil %>
           <% if current_user.passenger == nil %>
             <a href="/cars/join/<%= car.id %>">I want to join</a>
@@ -40,30 +40,13 @@
       <% end %>
     </div>
   <% end %>
+  <hr>
+  <p>You are currently <%= @distances[i] %> KM to meeting point</p>
+  <hr>
+  <% i += 1 %>
 <% end %>
 
 <a href="/home">Back</a>
-
-<script>
-
-// function getLocation() {
-//     if (navigator.geolocation) {
-
-//     } else {
-//         x.innerHTML = "Geolocation is not supported by this browser.";
-//     }
-// }
-
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
-}
-
-console.log(navigator.geolocation)
-
-
-
-</script>
 
 <!-- <% @cars.each do |car| %>
    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{car.latitude}%2C#{car.longitude}"%>
