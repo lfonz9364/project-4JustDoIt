@@ -1,18 +1,25 @@
 <h1>MAP</h1>
 
-<%= form_tag '/map', method: 'get' do %>
+<!-- <%= form_tag '/map', method: 'get' do %>
   <input name="start_address">
   <label for="">Meeting Place</label>
   <input name="destination_address">
   <label for="">Your Address</label>
   <br>
   <button class>Calculate Distance to Meeting Place</button>
-<% end %>
-<hr>
+<% end %> -->
+<!-- <hr> -->
 <p>Distance to Meeting Place is: <%= @distance %> KM</p>
 <hr>
 <p>GOOGLE LOCATION of Meeting Place</p>
-<% if @start_address_coordinates.present? %>
-  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@start_address_coordinates[0]}%2C#{@start_address_coordinates[1]}"%>
+
+<% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+<% my_url += "&markers=#{@user_address_coordinates[0]}%2C#{@user_address_coordinates[1]}" %>
+<% my_url += "&markers=#{@destination_address_coordinates[0]}%2C#{@destination_address_coordinates[1]}" %>
+
+<%= image_tag my_url %>
+
+<%= form_tag '/message', method: 'get' do %>
+  <button>Back</button>
 <% end %>
 <hr>

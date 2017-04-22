@@ -8,8 +8,6 @@ class PagesController < ApplicationController
     @current_location << params[:current_latitude]
     @current_location << params[:current_longitude]
 
-    byebug
-    
     @distances = []
 
     @cars.each do |i|

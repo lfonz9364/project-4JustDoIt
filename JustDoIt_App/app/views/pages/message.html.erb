@@ -44,7 +44,10 @@
   <p>You are currently <%= @distances[i] %> KM to meeting point</p>
   <form action="/map" method="get">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <button>Enter Different Address</button>
+    <input type="hidden" name="meeting_point" value="<%=car.meeting_point%>">
+    <input type="hidden" name="suburb" value="<%=car.suburb%>">
+    <input type="text" name="user_address" placeholder="Please enter your address" value="">
+    <button>Submit</button>
   </form>
   <hr>
   <% i += 1 %>
@@ -76,12 +79,6 @@ function showPosition(position) {
 getLocation()
 
 </script>
-
-
-
-<!-- <% @cars.each do |car| %>
-   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{car.latitude}%2C#{car.longitude}"%>
-<%end %> -->
 
 <% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
 <% @cars.each do |car| %>
