@@ -16,10 +16,10 @@
     <%= @car.smoker_friendly%>
   </span>
   <span>Date:
-    <%= @car.date %>
+    <%= @car.date_time.strftime("%d-%B-%Y") %>
   </span>
   <span>Time:
-    <%= @car.time.strftime("%I:%M%p") %>
+    <%= @car.date_time.strftime("%I:%M%p") %>
   </span>
   <a href="/cars/edit/<%= @car.id %>">Edit</a>
   <a href="/cars/destroy" data-method="delete">Delete</a>
@@ -32,5 +32,10 @@
       <a href="/cars/remove/<%= passenger.id %>">Remove Passenger</a>
     <% end %>
   </span>
+
+  <div class="">
+
+  </div>
+
   <a href="/home">Back</a>
 </div>

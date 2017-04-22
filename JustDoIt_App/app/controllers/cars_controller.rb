@@ -10,11 +10,22 @@ class CarsController < ApplicationController
     car.meeting_point = params[:meeting_point]
     car.suburb = params[:suburb]
     car.smoker_friendly = params[:smoker_friendly]
-    car.date = params[:date]
-    car.time = Time.local(params[:date],params[:time])
+    date = params[:date].split('-')
+    time = params[:time].split(':')
+    year = date[0].to_i
+    month = date[1].to_i
+    day = date[2].to_i
+    hour = time[0].to_i
+    min = time[1].to_i
+    car.date_time = Time.gm(year, month, day, hour, min)
+
+    coordinate = Geocoder.coordinates(params[:meeting_point] + ' ' + params[:suburb])
+    car.latitude = coordinate[0]
+    car.longitude = coordinate[1]
 
     if car.save
-      redirect_to "/cars/show/#{ car.id }"
+      redirect_to '/home'
+      # redirect_to "/cars/show/#{ car.id }"
     else
       redirect_to "/cars/new"
     end
@@ -54,8 +65,14 @@ class CarsController < ApplicationController
     car.meeting_point = params[:meeting_point]
     car.suburb = params[:suburb]
     car.smoker_friendly = params[:smoker_friendly]
-    car.date = params[:date]
-    car.time = params[:time]
+    date = params[:date].split('-')
+    time = params[:time].split(':')
+    year = date[0].to_i
+    month = date[1].to_i
+    day = date[2].to_i
+    hour = time[0].to_i
+    min = time[1].to_i
+    car.date_time = Time.gm(year, month, day, hour, min)
 
     if car.save
       redirect_to "/cars/show/#{ car.id }"
