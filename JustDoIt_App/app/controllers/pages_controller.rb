@@ -20,7 +20,6 @@ class PagesController < ApplicationController
 
       Geocoder.configure(:units => :km)
       @distances << Geocoder::Calculations.distance_between(@current_location, meeting_point).round(2)
-      byebug
     end
 
   end
