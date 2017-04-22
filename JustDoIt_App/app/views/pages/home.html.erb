@@ -1,16 +1,41 @@
 <a href=""></a>
 
-
 <h1>Car Pool</h1>
   <% if current_user.passenger == nil && current_user.car == nil %>
   <p class="post-car">
     <a href="/cars/new">I have a empty seat</a>
   </p>
   <p>
-    <a href="/cars">I need a lift</a>
+    <%= form_tag '/cars', method: 'get' do %>
+      <input id="c_latitude" type="hidden" name="current_latitude" value="">
+      <input id="c_longitude" type="hidden" name="current_longitude" value="">
+      <button>I need a lift</button>
+    <% end %>
   </p>
   <% elsif current_user.car != nil %>
     <a href="/cars/show/<%= current_user.car.id %>">Carpool Info</a>
   <% else %>
     <a href="/message">List of Cars Available</a>
 <% end %>
+
+
+<script>
+var lat = document.getElementById("c_latitude");
+var lon = document.getElementById("c_longitude");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    lat.value = position.coords.latitude;
+    lon.value = position.coords.longitude;
+}
+
+getLocation()
+
+</script>

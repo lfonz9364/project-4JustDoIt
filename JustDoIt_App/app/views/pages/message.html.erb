@@ -1,8 +1,9 @@
 
 <a href="/cars/filter">Filter</a>
 
-<% @cars.each do |car|%>
 
+<% i = 0 %>
+<% @cars.each do |car|%>
   <% if car.seat_number >= car.passenger.length %>
       <div>
         <span>Driver:
@@ -28,7 +29,6 @@
           <%= car.date_time.strftime("%I:%M%p") %>
         </span>
 
-
         <% if current_user.car == nil %>
           <% if current_user.passenger == nil %>
             <a href="/cars/join/<%= car.id %>">I want to join</a>
@@ -40,10 +40,51 @@
       <% end %>
     </div>
   <% end %>
+  <hr>
+  <p>You are currently <%= @distances[i] %> KM to meeting point</p>
+  <form action="/map" method="get">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <button>Enter Different Address</button>
+  </form>
+  <hr>
+  <% i += 1 %>
 <% end %>
 
 <a href="/home">Back</a>
 
-<% @cars.each do |car| %>
+
+<input id="c_latitude" type="_hidden" name="current_latitude" value="">
+<input id="c_longitude" type="_hidden" name="current_longitude" value="">
+
+<script>
+var lat = document.getElementById("c_latitude");
+var lon = document.getElementById("c_longitude");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    lat.value = position.coords.latitude;
+    lon.value = position.coords.longitude;
+}
+
+getLocation()
+
+</script>
+
+
+
+<!-- <% @cars.each do |car| %>
    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{car.latitude}%2C#{car.longitude}"%>
-<%end %>
+<%end %> -->
+
+<% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+<% @cars.each do |car| %>
+<% my_url += "&markers=#{car.latitude}%2C#{car.longitude}" %>
+<% end %>
+<%= image_tag my_url %>
