@@ -37,12 +37,12 @@ class CarsController < ApplicationController
     passenger.user_id = session[:id]
     passenger.car_id = params[:id]
     passenger.save
-    redirect_to '/cars'
+    redirect_to '/message'
   end
 
   def unjoin
     passenger = Passenger.find_by(user_id: session[:id]).destroy
-    redirect_to '/cars'
+    redirect_to '/message'
   end
 
   def show

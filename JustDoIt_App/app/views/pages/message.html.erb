@@ -31,7 +31,7 @@
 <% end %>
 
 <% @cars.each do |car|%>
-  <% if car.seat_number > car.passenger.length && @current_car.id != car.id %>
+  <% if car.seat_number > car.passenger.length && car.user_id != current_user.id %>
       <div>
         <span>Driver:
           <%= car.user.first_name %>
