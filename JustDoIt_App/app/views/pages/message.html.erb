@@ -1,10 +1,37 @@
 
 <a href="/cars/filter">Filter</a>
 
-
+<% if @current_car != nil %>
+<div>
+  <h1>Current car selected</h1>
+  <span>Driver:
+    <%= @current_car.user.first_name %>
+  </span>
+  <span>Additional Details:
+    <%= @current_car.description %>
+  </span>
+  <span>No. of Seat Available:
+    <%= @current_car.seat_number - @current_car.passenger.length %>
+  </span>
+  <span>Meeting Place:
+    <%= @current_car.meeting_point %>
+  </span>
+  <span>
+    Smoker Friendly:
+    <%= @current_car.smoker_friendly%>
+  </span>
+  <span>Date:
+    <%= @current_car.date_time.strftime("%d-%B-%Y") %>
+  </span>
+  <span>Time:
+    <%= @current_car.date_time.strftime("%I:%M%p") %>
+  </span>
+  <a href="/cars/unjoin">I change my mind</a>
+</div>
+<% end %>
 
 <% @cars.each do |car|%>
-  <% if car.seat_number >= car.passenger.length %>
+  <% if car.seat_number > car.passenger.length && @current_car.id != car.id %>
       <div>
         <span>Driver:
           <%= car.user.first_name %>
@@ -28,18 +55,9 @@
         <span>Time:
           <%= car.date_time.strftime("%I:%M%p") %>
         </span>
-
-        <% if current_user.car == nil %>
-          <% if current_user.passenger == nil %>
-            <a href="/cars/join/<%= car.id %>">I want to join</a>
-          <% else %>
-            <% if current_user.passenger.car_id == car.id %>
-              <a href="/cars/unjoin">I change my mind</a>
-            <% end %>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
+        <a href="/cars/join/<%= car.id %>">I want to join</a>
+      </div>
   <% end %>
+<% end %>
 
 <a href="/home">Back</a>

@@ -29,7 +29,7 @@ class CarsController < ApplicationController
 
   def destroy
     car = Car.find_by(user_id: session[:id]).destroy
-    redirect_to '/cars'
+    redirect_to '/home'
   end
 
   def join
