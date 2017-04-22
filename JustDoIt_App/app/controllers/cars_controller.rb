@@ -24,8 +24,8 @@ class CarsController < ApplicationController
     car.longitude = coordinate[1]
 
     if car.save
-      # redirect_to '/home'
-      redirect_to "/cars/show/#{ car.id }"
+      redirect_to '/home'
+      # redirect_to "/cars/show/#{ car.id }"
     else
       redirect_to "/cars/new"
     end
