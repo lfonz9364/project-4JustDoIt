@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
   get '/cars/new', to: 'cars#new'
-
-  get '/cars', to: 'pages#message'
   post '/cars', to: 'cars#create'
   get '/cars/join/:id', to: 'cars#join'
   get '/cars/unjoin', to: 'cars#unjoin'
