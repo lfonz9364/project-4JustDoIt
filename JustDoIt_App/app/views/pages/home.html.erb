@@ -6,11 +6,7 @@
     <a href="/cars/new">I have a empty seat</a>
   </p>
   <p>
-    <%= form_tag '/cars', method: 'get' do %>
-      <input id="c_latitude" type="hidden" name="current_latitude" value="">
-      <input id="c_longitude" type="hidden" name="current_longitude" value="">
-      <button>I need a lift</button>
-    <% end %>
+    <a href="/cars">I need a lift</a>
   </p>
   <% elsif current_user.car != nil %>
     <a href="/cars/show/<%= current_user.car.id %>">Carpool Info</a>
