@@ -10,10 +10,7 @@
     <input type="text" name="meeting_point">
     <br>
     <label>Suburb</label>
-    <select name="suburb">
-      <option value=""></option>
-      <option value=""></option>
-    </select>
+    <%= collection_select(:car, :seat_number, User.all, :id, :last_name) %>
     <br>
     <label>Smoker Friendly</label>
     <select name="smoker_friendly">

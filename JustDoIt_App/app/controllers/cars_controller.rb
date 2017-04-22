@@ -78,4 +78,5 @@ class CarsController < ApplicationController
     @cars = Car.where(suburb: params[:suburbfilter])
     render :filtered
   end
+
 end
