@@ -8,8 +8,8 @@ class PagesController < ApplicationController
     @current_location << params[:current_latitude]
     @current_location << params[:current_longitude]
 
-    byebug
-    
+
+
     @distances = []
 
     @cars.each do |i|
@@ -20,6 +20,7 @@ class PagesController < ApplicationController
 
       Geocoder.configure(:units => :km)
       @distances << Geocoder::Calculations.distance_between(@current_location, meeting_point).round(2)
+      byebug
     end
 
   end
