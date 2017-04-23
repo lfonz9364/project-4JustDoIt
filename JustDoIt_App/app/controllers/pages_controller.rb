@@ -10,8 +10,7 @@ class PagesController < ApplicationController
     end
 
     current_user = User.find(session[:id])
-
-    if current_user.passenger != nil
+    if current_user.passenger.present?
       @current_car = Car.find(current_user.passenger.car_id)
     end
   end
