@@ -42,7 +42,17 @@
 
 
 <div class="msg_container">
-  <a class="filter" href="/cars/filter">Filter</a>
+  <div class="filter_suburb">
+    <h1>Filter Suburbs</h1>
+    <form class="filtering" action="/message">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <label>Suburb</label><br>
+      <input type="text" name="suburbfilter" value="">
+      <br>
+      <button>Find a match!</button>
+    </form>
+    <a href="/message">Reset Filter</a>
+  </div>
   <% @cars.each do |car|%>
     <% if car.seat_number > car.passenger.length && car.user_id != current_user.id %>
           <div class="pass_bulletin">

@@ -3,7 +3,11 @@ class PagesController < ApplicationController
   end
 
   def message
-    @cars = Car.all
+    if params[:suburbfilter].present?
+      @cars = Car.where(suburb: params[:suburbfilter].titlecase)
+    else
+      @cars = Car.all
+    end
 
     current_user = User.find(session[:id])
 

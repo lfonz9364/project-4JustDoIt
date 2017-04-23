@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   get '/cars/edit/:id', to: 'cars#edit'
   post '/cars/edit/:id', to: 'cars#update'
   get '/cars/remove/:id', to: 'cars#remove'
-  get '/cars/filter', to: 'cars#filter'
-  post '/cars/filtering', to: 'cars#filtering'
 
 
   get '/users/new', to: 'users#new'
@@ -26,5 +24,4 @@ Rails.application.routes.draw do
   get '/map', to: 'maps#map'
 
   root 'sessions#new'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
