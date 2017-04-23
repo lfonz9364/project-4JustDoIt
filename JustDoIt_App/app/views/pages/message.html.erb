@@ -1,5 +1,5 @@
 <div class="msg_container">
-  <% if @current_car != nil %>
+  <% if @current_car.present? %>
     <div class="pass_bulletin">
       <h1>Current car selected</h1>
       <span class="driver">Driver:
@@ -42,9 +42,20 @@
 
 
 <div class="msg_container">
-  <a class="filter" href="/cars/filter">Filter</a>
+  <div class="filter_suburb">
+    <h1>Filter Suburbs</h1>
+    <form class="filtering" action="/message">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <label>Suburb</label><br>
+      <input type="text" name="suburbfilter" value="">
+      <br>
+      <button>Find a match!</button>
+    </form>
+    <a href="/message">Reset Filter</a>
+  </div>
+
   <% @cars.each do |car|%>
-    <% if car.seat_number > car.passenger.length && car.user_id != current_user.id %>
+    <% if car.seat_number > car.passenger.length %>
           <div class="pass_bulletin">
             <br>
             <span class="driver">Driver:
@@ -80,8 +91,20 @@
               <%= car.date_time.strftime("%I:%M%p") %>
             </span>
             <br>
-            <a class="join"href="/cars/join/<%= car.id %>">Join</a>
+            <% if @current_car.blank? %>
+              <a class="join "href="/cars/join/<%= car.id %>">Join</a>
+            <% end %>
         </div>
+
+        <p>You are currently UNDER CONSTRUCTION  KM to meeting point</p>
+
+      <form action="/map" method="get">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="meeting_point" value="<%=car.meeting_point%>">
+        <input type="hidden" name="suburb" value="<%=car.suburb%>">
+        <input type="text" name="user_address" placeholder="Please enter your address" value="">
+        <button>Submit</button>
+      </form>
     <% end %>
   <% end %>
   <a class="return" href="/home">Back</a>

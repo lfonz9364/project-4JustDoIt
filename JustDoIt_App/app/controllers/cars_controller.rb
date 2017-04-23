@@ -18,7 +18,7 @@ class CarsController < ApplicationController
     hour = time[0].to_i
     min = time[1].to_i
     car.date_time = Time.gm(year, month, day, hour, min)
-
+    
     if car.save
       redirect_to '/home'
       # redirect_to "/cars/show/#{ car.id }"
@@ -82,13 +82,5 @@ class CarsController < ApplicationController
     car_id = passenger.car_id
     passenger.destroy
     redirect_to "/cars/show/#{ car_id }"
-  end
-
-  def filter
-  end
-
-  def filtering
-    @cars = Car.where(suburb: params[:suburbfilter])
-    render :filtered
   end
 end
