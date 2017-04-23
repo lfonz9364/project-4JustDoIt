@@ -2,18 +2,18 @@
 
 <% @cars.each do |car|%>
 
-  <% if car.seat_number >= car.passenger.length %>
-      <div>
-        <span>Driver:
+  <% if car.seat_number > car.passenger.length %>
+      <div class="pass_bulletin">
+        <span id="driver_id">Driver:
           <%= car.user.first_name %>
         </span>
         <span>Additional Details:
           <%= car.description %>
         </span>
-        <span>No. of Seat Available:
+        <span class="seats">No. of Seat Available:
           <%= car.seat_number - car.passenger.length %>
         </span>
-        <span>Meeting Place:
+        <span class="meeting">Meeting Place:
           <%= car.meeting_point %>
         </span>
         <span>

@@ -31,39 +31,50 @@
 <% end %>
 
 <% @cars.each do |car|%>
-  <% if car.seat_number > car.passenger.length && car.user_id != current_user.id %>
-      <div>
-        <span>Driver:
-          <%= car.user.first_name %>
-        </span>
-        <span>Additional Details:
-          <%= car.description %>
-        </span>
-        <span>No. of Seat Available:
-          <%= car.seat_number - car.passenger.length %>
-        </span>
-        <span>Meeting Place:
-          <%= car.meeting_point %>
-        </span>
-        <span>
-          Smoker Friendly:
-          <%= car.smoker_friendly%>
-        </span>
-        <span>Date:
-          <%= car.date_time.strftime("%d-%B-%Y") %>
-        </span>
-        <span>Time:
-          <%= car.date_time.strftime("%I:%M%p") %>
-        </span>
-        <a href="/cars/join/<%= car.id %>">I want to join</a>
-      </div>
-  <% end %>
+  <div class="msg_container">
+    <% if car.seat_number > car.passenger.length && car.user_id != current_user.id %>
+          <div class="pass_bulletin">
+            <a class="filter" href="/cars/filter">Filter</a>
+            <br>
+            <span class="driver">Driver:
+              <%= car.user.first_name %>
+            </span>
+            <br>
+            <span class="add_info">Additional Details:
+              <%= car.description %>
+            </span>
+            <br>
+            <span class="seats">Seats Available:
+              <%= car.seat_number - car.passenger.length %>
+            </span>
+            <br>
+            <span class="meet">Meeting Place:
+              <%= car.meeting_point %>
+            </span>
+            <br>
+            <span class="smoke">
+              Smoker Friendly:
+              <%= car.smoker_friendly%>
+            </span>
+            <br>
+            <span class="date">Date:
+              <%= car.date_time.strftime("%d-%B-%Y") %>
+            </span>
+            <br>
+            <span class="time">Time:
+              <%= car.date_time.strftime("%I:%M%p") %>
+            </span>
+            <br>
+            <a href="/cars/join/<%= car.id %>">I want to join</a>
+        </div>
+    <% end %>
+  </div>
 <% end %>
 
 <a href="/home">Back</a>
 
   <hr>
-  <p>You are currently <%= @distances[i] %> KM to meeting point</p>
+  <p class="curr_distant">You are currently <%= @distances[i] %> KM to meeting point</p>
   <hr>
   <form action="/map" method="get">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -76,4 +87,10 @@
   <% i += 1 %>
 <% end %>
 
-<a href="/home">Back</a>
+<a class="return" href="/home">Back</a>
+
+<% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+<% @cars.each do |car| %>
+<% my_url += "&markers=#{car.latitude}%2C#{car.longitude}" %>
+<% end %>
+<%= image_tag my_url %>

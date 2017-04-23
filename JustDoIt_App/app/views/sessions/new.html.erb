@@ -1,18 +1,27 @@
-<div class="login-pg">
-  <div class="login-container">
-    <%= form_tag '/session', method: 'post' do %>
-    <br>
-    <label class="email"for="">Email</label>
-    <br>
-    <input class="email-login"type="text" name="email" placeholder="username">
-    <br>
-    <label class="password-label"for="">Password</label>
-    <br>
-    <input class="password-login"type="password" name="password" placeholder="password">
-    <br>
-    <br>
-    <button class="login-button">Login</button>
-    <% end %>
-  </div>
+
+
+<div id="page-wrap">
+
+  <section>
+    <h1>Welcome To WDI Conference</h1>
+  </section>
+
+  <div class="login-pg">
+      <%= form_tag '/session', method: 'post' do %>
+      <br>
+      <label class="email"for="">Email</label>
+      <br>
+      <input class="email-login"type="text" name="email" placeholder="username">
+      <br>
+      <label class="password-label"for="">Password</label>
+      <br>
+      <input class="password-login"type="password" name="password" placeholder="password">
+      <br>
+      <br>
+      <button class="login-button">Login</button>
+      <% end %>
+      <br>
     <a class="sign-link"href="/users/new">Signup</a>
+  </div>
+
 </div>
