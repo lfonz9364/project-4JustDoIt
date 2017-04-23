@@ -1,38 +1,40 @@
-
-<% if @current_car != nil %>
-<div class="pass_bulletin">
-  <h1>Current car selected</h1>
-  <span>Driver:
-    <%= @current_car.user.first_name %>
-  </span>
-  <span>Additional Details:
-    <%= @current_car.description %>
-  </span>
-  <span>No. of Seat Available:
-    <%= @current_car.seat_number - @current_car.passenger.length %>
-  </span>
-  <span>Meeting Place:
-    <%= @current_car.meeting_point %>
-  </span>
-  <span>
-    Smoker Friendly:
-    <%= @current_car.smoker_friendly%>
-  </span>
-  <span>Date:
-    <%= @current_car.date_time.strftime("%d-%B-%Y") %>
-  </span>
-  <span>Time:
-    <%= @current_car.date_time.strftime("%I:%M%p") %>
-  </span>
-  <a href="/cars/unjoin">I change my mind</a>
+<div class="msg_container">
+  <% if @current_car != nil %>
+    <div class="pass_bulletin">
+      <h1>Current car selected</h1>
+      <span>Driver:
+        <%= @current_car.user.first_name %>
+      </span>
+      <span>Additional Details:
+        <%= @current_car.description %>
+      </span>
+      <span>No. of Seat Available:
+        <%= @current_car.seat_number - @current_car.passenger.length %>
+      </span>
+      <span>Meeting Place:
+        <%= @current_car.meeting_point %>
+      </span>
+      <span>
+        Smoker Friendly:
+        <%= @current_car.smoker_friendly%>
+      </span>
+      <span>Date:
+        <%= @current_car.date_time.strftime("%d-%B-%Y") %>
+      </span>
+      <span>Time:
+        <%= @current_car.date_time.strftime("%I:%M%p") %>
+      </span>
+      <a href="/cars/unjoin">I change my mind</a>
+    </div>
+  <% end %>
 </div>
-<% end %>
 
-<% @cars.each do |car|%>
-  <div class="msg_container">
+
+<div class="msg_container">
+  <a class="filter" href="/cars/filter">Filter</a>
+  <% @cars.each do |car|%>
     <% if car.seat_number > car.passenger.length && car.user_id != current_user.id %>
           <div class="pass_bulletin">
-            <a class="filter" href="/cars/filter">Filter</a>
             <br>
             <span class="driver">Driver:
               <%= car.user.first_name %>
@@ -48,6 +50,10 @@
             <br>
             <span class="meet">Meeting Place:
               <%= car.meeting_point %>
+            </span>
+            <br>
+            <span>Suburb:
+              <%= car.suburb %>
             </span>
             <br>
             <span class="smoke">
@@ -66,7 +72,7 @@
             <a href="/cars/join/<%= car.id %>">I want to join</a>
         </div>
     <% end %>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <a class="return" href="/home">Back</a>
