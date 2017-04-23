@@ -91,8 +91,12 @@
               <%= car.date_time.strftime("%I:%M%p") %>
             </span>
             <br>
-            <a href="/cars/join/<%= car.id %>">I want to join</a>
+
+            <% if @current_car.blank? %>
+              <a href="/cars/join/<%= car.id %>">I want to join</a>
+            <% end %>
         </div>
+
         <p>You are currently UNDER CONSTRUCTION  KM to meeting point</p>
 
       <form action="/map" method="get">
