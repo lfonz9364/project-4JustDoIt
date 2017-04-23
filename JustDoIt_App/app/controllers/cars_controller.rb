@@ -18,7 +18,7 @@ class CarsController < ApplicationController
     hour = time[0].to_i
     min = time[1].to_i
     car.date_time = Time.gm(year, month, day, hour, min)
-    byebug
+    
     if car.save
       redirect_to '/home'
       # redirect_to "/cars/show/#{ car.id }"
