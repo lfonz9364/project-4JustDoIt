@@ -61,3 +61,19 @@
 <% end %>
 
 <a href="/home">Back</a>
+
+  <hr>
+  <p>You are currently <%= @distances[i] %> KM to meeting point</p>
+  <hr>
+  <form action="/map" method="get">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="meeting_point" value="<%=car.meeting_point%>">
+    <input type="hidden" name="suburb" value="<%=car.suburb%>">
+    <input type="text" name="user_address" placeholder="Please enter your address" value="">
+    <button>Submit</button>
+  </form>
+  <hr>
+  <% i += 1 %>
+<% end %>
+
+<a href="/home">Back</a>

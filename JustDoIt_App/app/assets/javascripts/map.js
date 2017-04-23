@@ -8,6 +8,17 @@ $(document).ready(function(){
         lng: position.coords.longitude
       };
       console.log(pos);
+
+      $.ajax({
+        url: '/message',
+        method: 'get',
+        data: { lat: pos.lat,
+                lng: pos.lng
+              }
+        }).done(function(done){
+          console.log('test');
+        });
     });
-  }
+  };
+
 });
