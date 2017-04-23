@@ -76,6 +76,7 @@ class CarsController < ApplicationController
 
   def filtering
     @cars = Car.where(suburb: params[:suburbfilter])
+    # byebug
     render :filtered
   end
 
