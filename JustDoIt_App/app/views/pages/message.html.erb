@@ -54,7 +54,7 @@
     <a href="/message">Reset Filter</a>
   </div>
   <% @cars.each do |car|%>
-    <% if car.seat_number > car.passenger.length && car.user_id != current_user.id %>
+    <% if car.seat_number > car.passenger.length && car.id != @current_car.id %>
           <div class="pass_bulletin">
             <br>
             <span class="driver">Driver:
