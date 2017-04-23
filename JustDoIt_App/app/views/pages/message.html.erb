@@ -1,5 +1,5 @@
 <div class="msg_container">
-  <% if @current_car != nil %>
+  <% if @current_car.present? %>
     <div class="pass_bulletin">
       <h1>Current car selected</h1>
       <span class="driver">Driver:
@@ -55,7 +55,7 @@
   </div>
 
   <% @cars.each do |car|%>
-    <% if car.seat_number > car.passenger.length && car.passenger.ids.exclude?(current_user.passenger.id) %>
+    <% if car.seat_number > car.passenger.length %>
           <div class="pass_bulletin">
             <br>
             <span class="driver">Driver:
@@ -93,6 +93,15 @@
             <br>
             <a href="/cars/join/<%= car.id %>">I want to join</a>
         </div>
+        <p>You are currently UNDER CONSTRUCTION  KM to meeting point</p>
+
+      <form action="/map" method="get">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="meeting_point" value="<%=car.meeting_point%>">
+        <input type="hidden" name="suburb" value="<%=car.suburb%>">
+        <input type="text" name="user_address" placeholder="Please enter your address" value="">
+        <button>Submit</button>
+      </form>
     <% end %>
   <% end %>
 </div>

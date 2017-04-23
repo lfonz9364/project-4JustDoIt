@@ -8,15 +8,15 @@ $(document).ready(function(){
         lng: position.coords.longitude
       };
 
-      // $.ajax({
-      //   url: '/message',
-      //   method: 'get',
-      //   data: { lat: pos.lat,
-      //           lng: pos.lng
-      //         }
-      //   }).done(function(data){
-      //     console.log(data);
-      //   });
+      $.ajax({
+        url: '/message',
+        method: 'get',
+        data: { lat: pos.lat,
+                lng: pos.lng
+              }
+        }).done(function(data){
+          console.log(data);
+        });
     });
   };
 
