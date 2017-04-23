@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20170421070953) do
     t.text     "meeting_point"
     t.boolean  "smoker_friendly"
     t.string   "suburb"
+    t.float    "latitude"
+    t.float    "longitude"
     t.text     "description"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

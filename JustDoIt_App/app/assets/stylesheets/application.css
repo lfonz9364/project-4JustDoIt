@@ -218,48 +218,47 @@ a:hover {
 }
 
 .container {
-  margin-top: 150px;
-  width: 472px;
+  /*margin-top: 150px;
+  width: 472px;*/
   color: #F44336;
   font-weight: 700;
-  display: inline-block;
+  /*display: inline-block;*/
   font-size: medium;
-  background-color: rgba(78, 78, 78, 0.16);
-  background-image: url("");
+  background-color: rgba(78, 78, 78);
 }
 
 /*Passenger bulletin board*/
 /*============================ */
 
 .msg_container {
-  display: inline-block;
+  /*display: inline-block;*/
   text-align: left;
-  background-color: rgba(78, 78, 78, 0.16);
-  margin-top: 167px;
+  /*background-color: rgba(78, 78, 78, 0.16);*/
+  /*margin-top: 167px;*/
   color: red;
   border-radius: 5px;
   margin-left: -358px;
   font-family: 'Space Mono', monospace;
-  width: 529px;
+  /*width: 529px;*/
 }
 
 .filter_suburb {
-  display: inline-table;
-  margin-top: 106px;
+  /*display: inline-table;
+  margin-top: 106px;*/
 }
 
 .filtering {
-  display: inline-table;
-  margin-top: 106px;
+  /*display: inline-table;
+  margin-top: 106px;*/
 }
 
 .join {
-  float:left;
+  /*float:left;*/
 }
 
 .return {
-  float: right;
-  margin-right: 361px;
+  /*float: right;
+  margin-right: 361px;*/
 }
 
 
