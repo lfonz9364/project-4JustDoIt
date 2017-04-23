@@ -14,35 +14,64 @@
  *= require_self
  */
 
+body {
+  text-align: center;
+  background-color: #455A64;
+  font-family: 'Space Mono', monospace;
+}
 
+#page-wrap {
+  /*width: 800px;*/
+  height: 645px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgb(69, 90, 100);
+  font-family: 'Space Mono', monospace;
+
+}
+
+section {
+  margin-top: 40px
+}
+h1 {
+  font-family: 'Space Mono', monospace;
+}
+
+h2 {
+  font-family: 'Space Mono', monospace;
+}
  .login-pg {
-   text-align: center;
+   /*text-align: center;*/
    margin-top: 100px;
  }
 
  .email {
-   margin-left: -146px;
+   font-size: 20px;
  }
 
  .password-label {
-   margin-left: -119px;
+   font-size: 20px;
  }
 
  .login-button {
-   margin-left: -150px;
+   font-size: 20px;
    padding: 0;
  }
 
  .sign-link {
-   margin-right: 145px;
+   font-size: 20px;
+   color: black;
  }
 
  a {
    text-transform: none;
  }
 
- h1, .register {
+ h1 {
    text-align: center;
+ }
+
+ .register {
  }
 
  .name-md {
@@ -74,6 +103,7 @@
    color: black;
    text-transform: uppercase;
    font-weight: 600;
+   font-size: 25px;
    margin-top: 32px;;
    margin-left: 24px;
  }
@@ -83,6 +113,7 @@
 
  .logout-btn {
    float: right;
+   font-size: 25px;
    text-transform: uppercase;
    margin-top: 32px;
    margin-right: 23px;
@@ -110,7 +141,7 @@ a {
   margin-top: 20px;
   /*margin-left: 24px;*/
 }
-
+/*
 .hitch-ride {
    text-align: center;
    float: none;
@@ -119,36 +150,89 @@ a {
    margin-top: 160px;
    margin-bottom: 0px;
    margin-left: 100px;
-}
+}*/
 
 .home-h1 {
   font-weight: normal;
   display: inline-block;
-  text-align: left;
+  text-align: center;
+  text-transform: uppercase;
   /*margin-left: px;*/
 }
 
 .post-info {
-  display: grid;
-  margin-left: 17px;
+  display: inline-grid;
   background-color: white;
-  margin-top: 47px;
-  background-color: rgb(255, 255, 255)
+  margin-top: 150px;
+  background-color: rgb(69, 90, 100);
 }
+
+a:hover {
+
+}
+
 .container {
    color: brown;
    display: inline-flex;
 }
+
+.make-post {
+  float: right;
+}
+
  .cancel-post {
    color: black;
    border: 10px;
-   height: 33px
+   margin-top: -2px;
+   padding: 5px;
+   float: left;
 }
 
 .container {
-  margin-right: 82px;
-  margin-top: 30px;
-  margin-left: 74px;
+  margin-top: 150px;
   display: inline-block;
   background-color: rgba(239, 241, 242, 0.69);
 }
+
+
+/*Passenger bulletin board*/
+/*============================ */
+
+.msg_container {
+  display: inline-block;
+  text-align: left;
+  background-color: rgba(150, 130, 130, 0);
+  margin-top: 40px;
+  float: left;
+  margin-left: 0px;
+  font-family: 'Space Mono', monospace;
+  width: 640px;
+}
+
+.filter_suburb {
+  display: inline-table;
+  margin-top: 106px;
+}
+
+.filtering {
+  display: inline-table;
+  margin-top: 106px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===========*/
