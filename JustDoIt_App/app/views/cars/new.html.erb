@@ -1,7 +1,8 @@
 <div class="container">
-  <form action="/cars" method="post">
+  <h2>Passenger Registration</h2>
+  <form action="/message" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <label>No. of Seat Available</label>
+    <label>Seats Available</label>
     <br>
     <input type="text" name="seat_number">
     <br>
@@ -15,8 +16,8 @@
       <option value="St Kilda">St Kilda</option>
     </select>
     <br>
-    <label>Smoker Friendly</label>
-    <select name="smoker_friendly">
+    <label>Smoking</label>
+      <select name="smoker_friendly">
       <option value="no">No</option>
       <option value="yes">Yes</option>
     </select>
@@ -32,6 +33,7 @@
     <label>Additional Details</label>
     <br>
     <textarea name="description" rows="8" cols="80"></textarea>
+    <br>
     <button class="make-post">Post</button>
   </form>
   <button class="cancel-post">
