@@ -9,7 +9,6 @@ class PagesController < ApplicationController
     if params[:lat] != @current_location[0] && params[:lat].present?
       @current_location << params[:lat]
       @current_location << params[:lng]
-      byebug
     end
 
     @distances = []
