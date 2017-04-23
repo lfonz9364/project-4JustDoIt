@@ -7,7 +7,7 @@
 <% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
 <% my_url += "&markers=#{@user_address_coordinates[0]}%2C#{@user_address_coordinates[1]}" %>
 <% my_url += "&markers=#{@destination_address_coordinates[0]}%2C#{@destination_address_coordinates[1]}" %>
-
+<% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
 <%= image_tag my_url %>
 
 <%= form_tag '/message', method: 'get' do %>

@@ -16,8 +16,18 @@ class PagesController < ApplicationController
       if params[:suburbfilter].present?
         @cars = Car.where('suburb = ?', params[:suburbfilter].titlecase)
       else
-        @cars =Car.all
+        @cars = Car.all
       end
     end
+
+    if current_user.passenger.present?
+      @count = 1
+      car = Car.find(current_user.passenger.car_id)
+      @pin_meet_point = car
+    else
+      @count = 0
+      @pin_meet_point = Car.all
+    end
+
   end
 end
