@@ -240,15 +240,27 @@ a:hover {
   font-family: 'Space Mono', monospace;
 }
 
-.filter_suburb {
-  /*display: inline-table;
-  margin-top: 106px;*/
+.map-container {
+  display: inline-block;
+  text-align: left;
+  background-color: rgba(229, 57, 53, 0.78);
+  color: white;
+  margin-top: 36px;
+  font-size: 18px;
+  border-radius: 5px;
+  font-family: 'Space Mono', monospace;
 }
 
-.filtering {
-  /*display: inline-table;*/
+.back-btn {
+  font-size: 20px;
+  color: white;
+  width: 81.44px;
+  height: 37.6px;
+  border: #009688;
+  background-color: rgb(229, 27, 36);
+  border-radius: 6px;
+  float: left;
 }
-
 .join {
   float:left;
 }
@@ -263,10 +275,42 @@ a:hover {
   border-radius: 6px;
 }
 
+.passenger-bulletin {
+  display: inline-grid;
+  text-align: left;
+  marging-top: 21px;
+  background-color: rgba(229, 57, 53, 0.78);
+  color: white;
+  margin-top: 36px;
+  font-size: 18px;
+  border-radius: 5px;
+  font-family: 'Space Mono', monospace;
+}
+
+.passenger-area {
+  display: inline-block;
+  text-align: left;
+  background-color: rgba(229, 57, 53, 0.78);
+  color: white;
+  margin-top: 36px;
+  font-size: 18px;
+  border-radius: 5px;
+  font-family: 'Space Mono', monospace;
+}
 img {
   float: left;
 }
 
+.car-edit {
+  float: right;
+  float: right;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(229, 27, 36);
+  border-radius: 6px;
+  border: #009688;
+  text-decoration: none;
+}
 
 
 
