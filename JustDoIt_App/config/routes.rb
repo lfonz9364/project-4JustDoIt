@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   post '/cars/edit/:id', to: 'cars#update'
   get '/cars/remove/:id', to: 'cars#remove'
 
-
   get '/users/new', to: 'users#new'
   post '/users/', to: 'users#create'
   delete '/users', to: 'users#destroy'
