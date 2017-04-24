@@ -103,14 +103,13 @@ input {
   border: 1px solid rgba(173, 20, 87, 0.85);
 }
  .fixed-btn {
-   font-size: 20px;
-   color: #3F51B5;
    width: 148.18px;
    height: 32.6px;
+   font-size: 20px;
+   color: white;
    border: #009688;
+   background-color: rgb(229, 27, 36);
    border-radius: 6px;
-   float: none;
-   background-color: #FFEBEE;
  }
  /*.back-link {
    margin-left: -160px;
@@ -218,28 +217,27 @@ a:hover {
 }
 
 .container {
-  /*margin-top: 150px;
-  width: 472px;*/
-  color: #F44336;
+  width: 472px;
   font-weight: 700;
-  /*display: inline-block;*/
-  font-size: medium;
-  background-color: rgba(78, 78, 78);
+  display: inline-block;
+  margin-top: 36px;
+  font-size: 18px;
+  background-color: rgba(229, 57, 53, 0.78);
+  color: white;
 }
 
 /*Passenger bulletin board*/
 /*============================ */
 
 .msg_container {
-  /*display: inline-block;*/
+  display: inline-block;
   text-align: left;
-  /*background-color: rgba(78, 78, 78, 0.16);*/
-  /*margin-top: 167px;*/
-  color: red;
+  background-color: rgba(229, 57, 53, 0.78);
+  color: white;
+  margin-top: 36px;
+  font-size: 18px;
   border-radius: 5px;
-  margin-left: -358px;
   font-family: 'Space Mono', monospace;
-  /*width: 529px;*/
 }
 
 .filter_suburb {
@@ -248,19 +246,26 @@ a:hover {
 }
 
 .filtering {
-  /*display: inline-table;
-  margin-top: 106px;*/
+  /*display: inline-table;*/
 }
 
 .join {
-  /*float:left;*/
+  float:left;
 }
 
-.return {
-  /*float: right;
-  margin-right: 361px;*/
+.submit {
+  font-size: 20px;
+  color: white;
+  width: 81.44px;
+  height: 37.6px;
+  border: #009688;
+  background-color: rgb(229, 27, 36);
+  border-radius: 6px;
 }
 
+img {
+  float: left;
+}
 
 
 
