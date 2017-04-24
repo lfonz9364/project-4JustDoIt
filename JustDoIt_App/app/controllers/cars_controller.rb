@@ -10,11 +10,18 @@ class CarsController < ApplicationController
     car.meeting_point = params[:meeting_point]
     car.suburb = params[:suburb]
     car.smoker_friendly = params[:smoker_friendly]
-    car.date = params[:date]
-    car.time = Time.local(params[:date],params[:time])
-
+    date = params[:date].split('-')
+    time = params[:time].split(':')
+    year = date[0].to_i
+    month = date[1].to_i
+    day = date[2].to_i
+    hour = time[0].to_i
+    min = time[1].to_i
+    car.date_time = Time.gm(year, month, day, hour, min)
+    
     if car.save
-      redirect_to "/cars/show/#{ car.id }"
+      redirect_to '/home'
+      # redirect_to "/cars/show/#{ car.id }"
     else
       redirect_to "/cars/new"
     end
@@ -22,7 +29,7 @@ class CarsController < ApplicationController
 
   def destroy
     car = Car.find_by(user_id: session[:id]).destroy
-    redirect_to '/cars'
+    redirect_to '/home'
   end
 
   def join
@@ -30,12 +37,12 @@ class CarsController < ApplicationController
     passenger.user_id = session[:id]
     passenger.car_id = params[:id]
     passenger.save
-    redirect_to '/cars'
+    redirect_to '/message'
   end
 
   def unjoin
     passenger = Passenger.find_by(user_id: session[:id]).destroy
-    redirect_to '/cars'
+    redirect_to '/message'
   end
 
   def show
@@ -54,8 +61,14 @@ class CarsController < ApplicationController
     car.meeting_point = params[:meeting_point]
     car.suburb = params[:suburb]
     car.smoker_friendly = params[:smoker_friendly]
-    car.date = params[:date]
-    car.time = params[:time]
+    date = params[:date].split('-')
+    time = params[:time].split(':')
+    year = date[0].to_i
+    month = date[1].to_i
+    day = date[2].to_i
+    hour = time[0].to_i
+    min = time[1].to_i
+    car.date_time = Time.gm(year, month, day, hour, min)
 
     if car.save
       redirect_to "/cars/show/#{ car.id }"
@@ -69,13 +82,5 @@ class CarsController < ApplicationController
     car_id = passenger.car_id
     passenger.destroy
     redirect_to "/cars/show/#{ car_id }"
-  end
-
-  def filter
-  end
-
-  def filtering
-    @cars = Car.where(suburb: params[:suburbfilter])
-    render :filtered
   end
 end
