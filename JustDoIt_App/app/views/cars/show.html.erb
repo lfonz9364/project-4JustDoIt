@@ -23,21 +23,19 @@
   </span>
   <a href="/cars/edit/<%= @car.id %>">Edit</a>
   <a href="/cars/destroy" data-method="delete">Delete</a>
-</div>
-
-
-<div>
-  <span>
-    Passenger List:
-    <% @passengers.each do |passenger| %>
+  <div class="passenger-area">
+    <span>
+      Passenger List:
+      <% @passengers.each do |passenger| %>
       <span><%= passenger.user.first_name %></span>
       <a href="/cars/remove/<%= passenger.id %>">Remove Passenger</a>
-    <% end %>
-  </span>
+      <% end %>
+    </span>
 
-  <div class="">
+    <div class="">
 
+    </div>
+
+    <a href="/home">Back</a>
   </div>
-
-  <a href="/home">Back</a>
 </div>

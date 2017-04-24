@@ -1,16 +1,19 @@
-<h1>MAP</h1>
 
-<p>Distance to Meeting Place is: <%= @distance %> KM</p>
-<hr>
-<p>MAP SHOWS: MEETING PLACE and YOUR ENTERED ADDRESS</p>
+<div class="map-container">
+  <h1>MAP</h1>
 
-<% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
-<% my_url += "&markers=#{@user_address_coordinates[0]}%2C#{@user_address_coordinates[1]}" %>
-<% my_url += "&markers=#{@destination_address_coordinates[0]}%2C#{@destination_address_coordinates[1]}" %>
-<% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
-<%= image_tag my_url %>
+  <p>Distance to Meeting Place is: <%= @distance %> KM</p>
+  <hr>
+  <p>MAP SHOWS: MEETING PLACE and YOUR ENTERED ADDRESS</p>
 
-<%= form_tag '/message', method: 'get' do %>
-  <button>Back</button>
-<% end %>
-<hr>
+  <% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+  <% my_url += "&markers=#{@user_address_coordinates[0]}%2C#{@user_address_coordinates[1]}" %>
+  <% my_url += "&markers=#{@destination_address_coordinates[0]}%2C#{@destination_address_coordinates[1]}" %>
+  <% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
+  <%= image_tag my_url %>
+
+  <%= form_tag '/message', method: 'get' do %>
+  <button class="back-btn">Back</button>
+  <% end %>
+
+</div>
