@@ -3,14 +3,14 @@
 
   <% if current_user.passenger == nil && current_user.car == nil %>
     <p class="post-car">
-      <a href="/cars/new">I have a empty seat</a>
+      <a href="/cars/new">Seats Available</a>
     </p>
     <p class="give-lift">
-      <a href="/message">I need a lift</a>
+      <a href="/message">Need Car Pool</a>
     </p>
   <% elsif current_user.car != nil %>
     <a href="/cars/show/<%= current_user.car.id %>">Carpool Info</a>
   <% else %>
-    <a href="/message">List of Cars Available</a>
+    <a href="/message">Cars Available</a>
   <% end %>
 </div>
