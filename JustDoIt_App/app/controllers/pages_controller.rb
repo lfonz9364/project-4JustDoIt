@@ -31,11 +31,6 @@ class PagesController < ApplicationController
 
     render :message
 
-    lat = params[:lat]
-    lng = params[:lng]
-    current_location << lat
-    current_location << lng
-
     @distances = []
 
     @carlocation = Car.all
