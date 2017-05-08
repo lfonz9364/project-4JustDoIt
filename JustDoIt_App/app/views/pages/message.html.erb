@@ -38,10 +38,8 @@
       <a href="/cars/unjoin">I change my mind</a>
     </div>
   <% end %>
-</div>
-
-
-<div class="msg_container">
+<!-- </div> -->
+<!-- <div class="msg_container"> -->
   <div class="filter_suburb">
     <h1>Filter Suburbs</h1>
     <form class="filtering" action="/message">
@@ -53,7 +51,6 @@
     </form>
     <a href="/message">Reset Filter</a>
   </div>
-
   <% @cars.each do |car|%>
     <% if car.seat_number > car.passenger.length %>
           <div class="pass_bulletin">
@@ -91,23 +88,33 @@
               <%= car.date_time.strftime("%I:%M%p") %>
             </span>
             <br>
-
             <% if @current_car.blank? %>
               <a href="/cars/join/<%= car.id %>">I want to join</a>
             <% end %>
         </div>
-
-        <p>You are currently UNDER CONSTRUCTION  KM to meeting point</p>
-
+        <p>You are currently UNDER CONSTRUCTION  KM to meeting place</p>
       <form action="/map" method="get">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="meeting_point" value="<%=car.meeting_point%>">
         <input type="hidden" name="suburb" value="<%=car.suburb%>">
-        <input type="text" name="user_address" placeholder="Please enter your address" value="">
-        <button>Submit</button>
+        <input type="text" name="user_address" placeholder="Enter a different address" value="">
+        <button class="submit">Submit</button>
+        <a class="return" href="/home">Back</a>
       </form>
     <% end %>
   <% end %>
+  <% if @count == 1%>
+  <% pin_meet_point = @pin_meet_point %>
+  <% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+  <% my_url += "&markers=#{pin_meet_point.latitude}%2C#{pin_meet_point.longitude}"  %>
+  <% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
+  <%= image_tag my_url %>
+  <% else %>
+  <% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+  <% @pin_meet_point.each do |meet_point| %>
+  <% my_url += "&markers=#{meet_point.latitude}%2C#{meet_point.longitude}" %>
+  <% end %>
+  <% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
+  <%= image_tag my_url %>
+  <% end %>
 </div>
-
-<a class="return" href="/home">Back</a>

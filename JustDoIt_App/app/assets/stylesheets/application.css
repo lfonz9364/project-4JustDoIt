@@ -16,7 +16,7 @@
 
 body {
   text-align: center;
-  background-color: #455A64;
+  background-image: url("https://ga-core.s3.amazonaws.com/cms/files/files/000/002/549/original/papercraft-27ee990be441ec48fa99a57ccd5f363f.png");
   font-family: 'Space Mono', monospace;
 }
 
@@ -25,7 +25,7 @@ body {
   height: 645px;
   margin: 0 auto;
   text-align: center;
-  background-color: rgb(69, 90, 100);
+  /*background-color: rgb(69, 90, 100);*/
   font-family: 'Space Mono', monospace;
 
 }
@@ -41,12 +41,28 @@ h2 {
   font-family: 'Space Mono', monospace;
 }
  .login-pg {
-   /*text-align: center;*/
    margin-top: 100px;
  }
 
- .email {
-   font-size: 20px;
+ .filter {
+  /*float: right;
+  margin-top: -47px;
+  margin-left: 530px;*/
+ }
+
+ .return {
+  /*float: left;
+  margin-top: 32px;
+  margin-top: -7px;
+  margin-left: 536px;*/
+}
+
+ .email-login, .password-login {
+  width: 122px;
+  height: 24px;
+  font-size: larger;
+  border-radius: 4px;
+  border: 1px solid rgba(173, 20, 87, 0.85);
  }
 
  .password-label {
@@ -55,45 +71,49 @@ h2 {
 
  .login-button {
    font-size: 20px;
-   padding: 0;
+   color: white;
+   width: 81.44px;
+   height: 37.6px;
+   border: #009688;
+   background-color: rgb(229, 27, 36);
+   border-radius: 6px;
+   float: none;
  }
 
  .sign-link {
    font-size: 20px;
-   color: black;
- }
-
- a {
-   text-transform: none;
- }
-
- h1 {
-   text-align: center;
+   color: white;
+   padding: 4px;
+   border: #009688;
+   background-color: rgb(229, 27, 36);
+   border-radius: 6px;
+   float: none;
  }
 
  .register {
+  background-color: rgba(224, 224, 224, 0.37);
+  margin-top: -7px;
  }
 
- .name-md {
-   margin-left: -110px;
- }
- .fixed-name {
-   margin-left: -119px;
- }
-
- .short-name {
-   margin-left: -149px;
- }
- .phone-name {
-   margin-left: -146px;
- }
-
+input {
+  width: 122px;
+  height: 24px;
+  font-size: larger;
+  border-radius: 4px;
+  border: 1px solid rgba(173, 20, 87, 0.85);
+}
  .fixed-btn {
-   margin-left: -63px
+   width: 148.18px;
+   height: 32.6px;
+   font-size: 20px;
+   color: white;
+   border: #009688;
+   background-color: rgb(229, 27, 36);
+   border-radius: 6px;
  }
- .back-link {
+ /*.back-link {
    margin-left: -160px;
- }
+ }*/
 
  /*================*/
  /*user session* application.html.erb */
@@ -104,7 +124,7 @@ h2 {
    text-transform: uppercase;
    font-weight: 600;
    font-size: 25px;
-   margin-top: 32px;;
+   margin-top: 32px;
    margin-left: 24px;
  }
  .initial {
@@ -112,59 +132,56 @@ h2 {
  }
 
  .logout-btn {
+   font-size: 20px;
+   color: white;
+   width: 81.44px;
+   height: 37.6px;
+   border: #009688;
+   background-color: rgb(229, 27, 36);
+   border-radius: 6px;
+   margin-top: 32px;;
    float: right;
-   font-size: 25px;
-   text-transform: uppercase;
-   margin-top: 32px;
-   margin-right: 23px;
  }
 
 .post-car {
   float: left;
-  color: black;
-  text-transform: uppercase;
-  font-weight: 600;
+  color: #673AB7;
+  text-transform: none;
   text-decoration: none;
 }
 
 a {
+  font-size: 20px;
+  color: white;
+  padding: 4px;
+  background-color: rgb(229, 27, 36);
+  border-radius: 6px;
+  float: none;
+  text-transform: none;
   text-decoration: none;
-  display: inline-block;
-  /*margin-top: 160px;
-  padding: 4px;*/
 }
 .get-lift {
   float: left;
   color: black;
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: 600;
   margin-top: 20px;
-  /*margin-left: 24px;*/
 }
-/*
-.hitch-ride {
-   text-align: center;
-   float: none;
-   position: relative;
-   display: inline-flex;
-   margin-top: 160px;
-   margin-bottom: 0px;
-   margin-left: 100px;
-}*/
 
-.home-h1 {
+h1.home-h1 {
   font-weight: normal;
   display: inline-block;
   text-align: center;
   text-transform: uppercase;
-  /*margin-left: px;*/
+  float: left;
+  font-family: 'Space Mono', monospace;
 }
 
 .post-info {
   display: inline-grid;
   background-color: white;
   margin-top: 150px;
-  background-color: rgb(69, 90, 100);
+  background-color: rgba(255, 255, 255, 0.66);
 }
 
 a:hover {
@@ -178,22 +195,36 @@ a:hover {
 
 .make-post {
   float: right;
+  float: right;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(229, 27, 36);
+  border-radius: 6px;
+  border: #009688;
+  text-decoration: none;
 }
 
  .cancel-post {
-   color: black;
-   border: 10px;
    margin-top: -2px;
-   padding: 5px;
+   border: #009688;
    float: left;
+   font-size: 20px;
+   color: white;
+   padding: 4px;
+   background-color: rgb(229, 27, 36);
+   border-radius: 6px;
+
 }
 
 .container {
-  margin-top: 150px;
+  width: 472px;
+  font-weight: 700;
   display: inline-block;
-  background-color: rgba(239, 241, 242, 0.69);
+  margin-top: 36px;
+  font-size: 18px;
+  background-color: rgba(229, 57, 53, 0.78);
+  color: white;
 }
-
 
 /*Passenger bulletin board*/
 /*============================ */
@@ -201,26 +232,85 @@ a:hover {
 .msg_container {
   display: inline-block;
   text-align: left;
-  background-color: rgba(150, 130, 130, 0);
-  margin-top: 40px;
-  float: left;
-  margin-left: 0px;
+  background-color: rgba(229, 57, 53, 0.78);
+  color: white;
+  margin-top: 36px;
+  font-size: 18px;
+  border-radius: 5px;
   font-family: 'Space Mono', monospace;
-  width: 640px;
 }
 
-.filter_suburb {
-  display: inline-table;
-  margin-top: 106px;
+.map-container {
+  display: inline-block;
+  text-align: left;
+  background-color: rgba(229, 57, 53, 0.78);
+  color: white;
+  margin-top: 36px;
+  font-size: 18px;
+  border-radius: 5px;
+  font-family: 'Space Mono', monospace;
 }
 
-.filtering {
-  display: inline-table;
-  margin-top: 106px;
+.back-btn {
+  font-size: 20px;
+  color: white;
+  width: 81.44px;
+  height: 37.6px;
+  border: #009688;
+  background-color: rgb(229, 27, 36);
+  border-radius: 6px;
+  float: left;
+}
+.join {
+  float:left;
 }
 
+.submit {
+  font-size: 20px;
+  color: white;
+  width: 81.44px;
+  height: 37.6px;
+  border: #009688;
+  background-color: rgb(229, 27, 36);
+  border-radius: 6px;
+}
 
+.passenger-bulletin {
+  display: inline-grid;
+  text-align: left;
+  marging-top: 21px;
+  background-color: rgba(229, 57, 53, 0.78);
+  color: white;
+  margin-top: 36px;
+  font-size: 18px;
+  border-radius: 5px;
+  font-family: 'Space Mono', monospace;
+}
 
+.passenger-area {
+  display: inline-block;
+  text-align: left;
+  background-color: rgba(229, 57, 53, 0.78);
+  color: white;
+  margin-top: 36px;
+  font-size: 18px;
+  border-radius: 5px;
+  font-family: 'Space Mono', monospace;
+}
+img {
+  float: left;
+}
+
+.car-edit {
+  float: right;
+  float: right;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(229, 27, 36);
+  border-radius: 6px;
+  border: #009688;
+  text-decoration: none;
+}
 
 
 

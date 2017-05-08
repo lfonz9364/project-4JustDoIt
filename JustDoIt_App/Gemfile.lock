@@ -55,6 +55,8 @@ GEM
     execjs (2.7.0)
     ffi (1.9.18)
     geocoder (1.4.3)
+    geocomplete_rails (1.7.0)
+      railties (>= 3.1)
     geoip (1.6.3)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -161,6 +163,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   geocoder
+  geocomplete_rails
   geoip
   jbuilder (~> 2.5)
   jquery-rails

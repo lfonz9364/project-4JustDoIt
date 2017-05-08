@@ -1,31 +1,35 @@
-<form action="/cars/edit/<%= current_user.car.id %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label>No. of Seat Available</label>
-  <input type="text" name="seat_number" value="<%= current_user.car.seat_number %>">
+<div class="car-edt">
 
-  <label>Meeting Point</label>
-  <input type="text" name="meeting_point" value="<%= current_user.car.meeting_point %>">
+  <form action="/cars/edit/<%= current_user.car.id %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label>No. of Seat Available</label>
+    <input type="text" name="seat_number" value="<%= current_user.car.seat_number %>">
 
-  <label>Suburb</label>
-  <select name="suburb">
-    <option value="<%= current_user.car.suburb %>"><%= current_user.car.suburb %></option>
-    <option value=""></option>
-  </select>
+    <label>Meeting Point</label>
+    <input type="text" name="meeting_point" value="<%= current_user.car.meeting_point %>">
 
-  <label>Smoker Friendly</label>
-  <select name="smoker_friendly">
-    <option value="no">No</option>
-    <option value="yes">Yes</option>
-  </select>
+    <label>Suburb</label>
+    <select name="suburb">
+      <option value="<%= current_user.car.suburb %>"><%= current_user.car.suburb %></option>
+      <option value=""></option>
+    </select>
 
-  <label>date</label>
-  <input type="date" name="date" value="<%= current_user.car.date_time.strftime("%Y-%m-%d") %>">
+    <label>Smoker Friendly</label>
+    <select name="smoker_friendly">
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select>
 
-  <label>time</label>
-  <input type="time" name="time" value="<%= current_user.car.date_time.strftime("%H:%M") %>">
+    <label>date</label>
+    <input type="date" name="date" value="<%= current_user.car.date_time.strftime("%Y-%m-%d") %>">
 
-  <label>Additional Details</label>
-  <textarea name="description" rows="8" cols="80"><%= current_user.car.description %></textarea>
-  <button>Post</button>
-</form>
-<a href="/cars/show/<%= current_user.car.id %>">Cancel</a>
+    <label>time</label>
+    <input type="time" name="time" value="<%= current_user.car.date_time.strftime("%H:%M") %>">
+
+    <label>Additional Details</label>
+    <textarea name="description" rows="8" cols="80"><%= current_user.car.description %></textarea>
+    <button>Post</button>
+  </form>
+  <a href="/cars/show/<%= current_user.car.id %>">Cancel</a>
+
+</div>
