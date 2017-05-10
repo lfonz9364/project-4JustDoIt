@@ -19,7 +19,7 @@ We decide to cover the transport segment. With our app all the people attending 
 6. Git pull, Git Add, Git commit, Git push, and so on and on and on...until the end!
 
 ## Wireframes
-![alt tag](https://files.slack.com/files-pri/T0351JZQ0-F53V9H76J/screen_shot_2017-04-23_at_7.16.07_pm.png)
+![alt tag](https://drive.google.com/file/d/0B2debL2BWXl7Y0x1eUlxN0hVX0E/view?ts=58fc8214)
 
 ## ER Diagram
 ![alt tag](https://raw.githubusercontent.com/lfonz9364/project-4JustDoIt/master/JustDoIt_App/app/assets/images/wireframe.png)
