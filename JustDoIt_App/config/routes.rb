@@ -22,5 +22,8 @@ Rails.application.routes.draw do
 
   get '/map', to: 'maps#map'
 
+  get '/api/locations', to: 'api/locations#index'
+
+
   root 'sessions#new'
 end

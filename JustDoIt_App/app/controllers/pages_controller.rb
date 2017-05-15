@@ -31,20 +31,5 @@ class PagesController < ApplicationController
 
     render :message
 
-    @distances = []
-
-    @carlocation = Car.all
-
-    @carlocation.each do |i|
-
-      meeting_point = []
-      meeting_point << i.latitude
-      meeting_point << i.longitude
-
-      Geocoder.configure(:units => :km)
-      @distances << Geocoder::Calculations.distance_between(current_location, meeting_point).round(2)
-    end
-
-
   end
 end
