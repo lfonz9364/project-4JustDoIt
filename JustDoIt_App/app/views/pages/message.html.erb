@@ -35,6 +35,7 @@
         <%= @current_car.date_time.strftime("%I:%M%p") %>
       </span>
       <br>
+      <a href="/pages/mail/<%= @current_car.user.id %>">Send Message</a>
       <a href="/cars/unjoin">I change my mind</a>
     </div>
   <% end %>
