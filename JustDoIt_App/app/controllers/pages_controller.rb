@@ -30,4 +30,24 @@ class PagesController < ApplicationController
     end
 
   end
+
+  def sends
+    current_user = User.find_by( id: params[:id] )
+    Pony.mail({
+      :to => current_user.email,
+      :subject => params[:subject],
+      :body => params[:message] ,
+      :via => :smtp,
+      :via_options => {
+        :address              => 'smtp.gmail.com',
+        :port                 => '587',
+        :enable_starttls_auto => true,
+        :user_name            => "wdicarpool@gmail.com",
+        :password             => "cakepudding",
+        :authentication       => :plain,
+        :domain               => 'localhost:3000'
+      }
+    })
+    redirect_to "/pages/mail/success"
+  end
 end

@@ -22,6 +22,12 @@ Rails.application.routes.draw do
   get '/message', to: 'pages#message'
 
   get '/map', to: 'maps#map'
+  
+  get '/pages/mail/success', to: 'pages#sent'
+
+  get '/pages/mail/:id', to: 'pages#mail'
+  post '/pages/mail/:id', to: 'pages#sends'
+
 
   root 'sessions#new'
 end

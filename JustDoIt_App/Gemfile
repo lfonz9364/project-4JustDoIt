@@ -35,7 +35,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'geocoder'
 gem 'geoip'
 gem 'geocomplete_rails'
-
+gem 'pony'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

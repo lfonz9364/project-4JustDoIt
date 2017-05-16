@@ -1,0 +1,7 @@
+
+<h1>You're email successfully sent</h1>
+<% if current_user.car != nil %>
+  <a href="/cars/show/<%= current_user.car.id %>">Carpool Info</a>
+<% else %>
+  <a href="/message">Cars Available</a>
+<% end %>

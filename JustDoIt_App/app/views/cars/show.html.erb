@@ -28,6 +28,7 @@
       Passenger List:
       <% @passengers.each do |passenger| %>
       <span><%= passenger.user.first_name %></span>
+      <a href="/pages/mail/<%= passenger.user.id %>">Send Message</a>
       <a href="/cars/remove/<%= passenger.id %>">Remove Passenger</a>
       <% end %>
     </span>

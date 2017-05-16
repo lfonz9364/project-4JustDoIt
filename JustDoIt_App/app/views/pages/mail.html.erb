@@ -1,0 +1,13 @@
+<form action="/pages/mail/<%= params[:id] %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label>Subject:</label>
+    <input type="text" name="subject" placeholder="Please input a subject">
+    <label>Message:</label>
+    <textarea name="message" rows="8" cols="80" placeholder="Please input your message"></textarea>
+    <button>Send</button>
+</form>
+<% if current_user.car != nil %>
+  <a href="/cars/show/<%= current_user.car.id %>">Carpool Info</a>
+<% else %>
+  <a href="/message">Cars Available</a>
+<% end %>
