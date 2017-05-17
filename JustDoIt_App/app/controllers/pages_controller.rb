@@ -29,6 +29,8 @@ class PagesController < ApplicationController
       @pin_meet_point = Car.all
     end
 
+    render :message
+
   end
 
   def sends
