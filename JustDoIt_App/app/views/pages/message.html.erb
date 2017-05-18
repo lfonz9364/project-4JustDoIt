@@ -123,12 +123,12 @@
 
   <% if @count == 1%>
     <% pin_meet_point = @pin_meet_point %>
-    <% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+    <% my_url = "https://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
     <% my_url += "&markers=#{pin_meet_point.latitude}%2C#{pin_meet_point.longitude}"  %>
     <% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
     <%= image_tag my_url %>
   <% else %>
-    <% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+    <% my_url = "https://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
     <% @pin_meet_point.each do |meet_point| %>
     <% my_url += "&markers=#{meet_point.latitude}%2C#{meet_point.longitude}" %>
     <% end %>
