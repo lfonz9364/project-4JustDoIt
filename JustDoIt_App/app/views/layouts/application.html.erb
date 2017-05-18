@@ -8,8 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css"> -->
-    <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDnfegNbS72iCu8bOXmBqI6ZOdEccgT5Bs&libraries=places"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
@@ -24,9 +23,8 @@
       <% end %>
     <% end %>
 
-
     <%= yield %>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   </body>
 </html>
