@@ -9,10 +9,7 @@
     <input type="text" name="meeting_point" value="<%= current_user.car.meeting_point %>">
 
     <label>Suburb</label>
-    <select name="suburb">
-      <option value="<%= current_user.car.suburb %>"><%= current_user.car.suburb %></option>
-      <option value=""></option>
-    </select>
+    <input id="geocomplete" type="text" name="suburb" value="<%= current_user.car.suburb %>">
 
     <label>Smoker Friendly</label>
     <select name="smoker_friendly">

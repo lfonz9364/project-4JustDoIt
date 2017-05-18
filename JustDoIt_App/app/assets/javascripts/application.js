@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require geocomplete
-//= require 'map'
+//= require map
