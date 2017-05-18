@@ -125,9 +125,11 @@
   <%= image_tag my_url %>
   <% end %>
 </div>
-<<<<<<< HEAD
+
 <script>
+
 $(document).ready(function() {
+
   var current_lat;
   var current_lng;
 
@@ -135,6 +137,7 @@ $(document).ready(function() {
     method: 'GET',
     url: '/api/locations/'
    }).done(function(result){
+
      if (navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(function(position) {
            var current_lat = position.coords.latitude;
@@ -161,4 +164,5 @@ $(document).ready(function() {
       };
   });
 });
+
 </script>
