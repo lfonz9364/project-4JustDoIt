@@ -6,10 +6,7 @@
     <input type="text" name="seat_number" value="<%= current_user.car.seat_number %>">
 
     <label>Meeting Point</label>
-    <input type="text" name="meeting_point" value="<%= current_user.car.meeting_point %>">
-
-    <label>Suburb</label>
-    <input id="geocomplete" type="text" name="suburb" value="<%= current_user.car.suburb %>">
+    <input id="geocomplete" type="text" name="meeting_point" value="<%= current_user.car.meeting_point %>" onclick="geoInput()">
 
     <label>Smoker Friendly</label>
     <select name="smoker_friendly">

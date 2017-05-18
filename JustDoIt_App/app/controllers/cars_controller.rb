@@ -9,7 +9,7 @@ class CarsController < ApplicationController
     car.description = params[:description]
     car.seat_number = params[:seat_number]
     car.meeting_point = params[:meeting_point]
-    car.suburb = params[:suburb]
+    car.suburb = params[:meeting_point].split(', ')[1]
     car.smoker_friendly = params[:smoker_friendly]
     date = params[:date].split('-')
     time = params[:time].split(':')
@@ -20,13 +20,12 @@ class CarsController < ApplicationController
     min = time[1].to_i
     car.date_time = Time.gm(year, month, day, hour, min)
 
-    coordinate = Geocoder.coordinates(params[:meeting_point] + ' ' + params[:suburb])
+    coordinate = Geocoder.coordinates(params[:meeting_point] + ' ' + params[:meeting_point].split(', ')[1])
     car.latitude = coordinate[0]
     car.longitude = coordinate[1]
 
     if car.save
       redirect_to '/home'
-      # redirect_to "/cars/show/#{ car.id }"
     else
       redirect_to "/cars/new"
     end

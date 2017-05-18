@@ -39,126 +39,100 @@
       <a href="/cars/unjoin">I change my mind</a>
     </div>
   <% end %>
-<!-- </div> -->
-<!-- <div class="msg_container"> -->
+
   <div class="filter_suburb">
     <h1>Filter Suburbs</h1>
+
     <form class="filtering" action="/message">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <label>Suburb</label><br>
-      <input type="text" name="suburbfilter" value="">
+      <input id="geocomplete" type="text" name="suburbfilter" onclick="geoInput()">
       <br>
       <button>Find a match!</button>
     </form>
+
     <a href="/message">Reset Filter</a>
+    <a href="#" onclick="getDistance();">Get Distance</a>
   </div>
-  <% @cars.each do |car|%>
-    <% if car.seat_number > car.passenger.length %>
-          <div class="pass_bulletin">
-            <br>
-            <span>Driver ID:
-              <span><%= car.user.id%></span>
-            </span>
-            <br>
-            <span class="driver">Driver:
-              <%= car.user.first_name %>
-            </span>
-            <br>
-            <span class="add_info">Additional Details:
-              <%= car.description %>
-            </span>
-            <br>
-            <span class="seats">Seats Available:
-              <%= car.seat_number - car.passenger.length %>
-            </span>
-            <br>
-            <span class="meet">Meeting Place:
-              <%= car.meeting_point %>
-            </span>
-            <br>
-            <span>Suburb:
-              <%= car.suburb %>
-            </span>
-            <br>
-            <span class="smoke">
-              Smoker Friendly:
-              <%= car.smoker_friendly%>
-            </span>
-            <br>
-            <span class="date">Date:
-              <%= car.date_time.strftime("%d-%B-%Y") %>
-            </span>
-            <br>
-            <span class="time">Time:
-              <%= car.date_time.strftime("%I:%M%p") %>
-            </span>
-            <br>
-            <% if @current_car.blank? %>
-              <a href="/cars/join/<%= car.id %>">I want to join</a>
-            <% end %>
-        </div>
 
-        <p>You are currently <span id=<%=car.user.id%> class="distance">under construction</span>KM to meeting place</p>
+  <% if @cars.present? %>
+    <% @cars.each do |car|%>
+      <% if car.seat_number > car.passenger.length %>
+            <div class="pass_bulletin">
+              <br>
+              <span>Driver ID:
+                <span><%= car.user.id%></span>
+              </span>
+              <br>
+              <span class="driver">Driver:
+                <%= car.user.first_name %>
+              </span>
+              <br>
+              <span class="add_info">Additional Details:
+                <%= car.description %>
+              </span>
+              <br>
+              <span class="seats">Seats Available:
+                <%= car.seat_number - car.passenger.length %>
+              </span>
+              <br>
+              <span class="meet">Meeting Place:
+                <%= car.meeting_point %>
+              </span>
+              <br>
+              <span>Suburb:
+                <%= car.suburb %>
+              </span>
+              <br>
+              <span class="smoke">
+                Smoker Friendly:
+                <%= car.smoker_friendly%>
+              </span>
+              <br>
+              <span class="date">Date:
+                <%= car.date_time.strftime("%d-%B-%Y") %>
+              </span>
+              <br>
+              <span class="time">Time:
+                <%= car.date_time.strftime("%I:%M%p") %>
+              </span>
+              <br>
 
-      <form action="/map" method="get">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="meeting_point" value="<%=car.meeting_point%>">
-        <input type="hidden" name="suburb" value="<%=car.suburb%>">
-        <input type="text" name="user_address" placeholder="Enter a different address" value="">
-        <button class="submit">Submit</button>
-        <a class="return" href="/home">Back</a>
-      </form>
+              <% if @current_car.blank? %>
+                <a href="/cars/join/<%= car.id %>">I want to join</a>
+              <% end %>
+          </div>
+
+          <span id="<%=car.user.id%>" class="distance"></span>
+
+          <form action="/map" method="get">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="hidden" name="meeting_point" value="<%=car.meeting_point%>">
+            <input type="hidden" name="suburb" value="<%=car.suburb%>">
+            <input type="text" name="user_address" placeholder="Enter a different address" value="">
+            <button class="submit">Submit</button>
+            <a class="return" href="/home">Back</a>
+          </form>
+        <% end %>
     <% end %>
-  <% end %>
-  <% if @count == 1%>
-  <% pin_meet_point = @pin_meet_point %>
-  <% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
-  <% my_url += "&markers=#{pin_meet_point.latitude}%2C#{pin_meet_point.longitude}"  %>
-  <% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
-  <%= image_tag my_url %>
   <% else %>
-  <% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
-  <% @pin_meet_point.each do |meet_point| %>
-  <% my_url += "&markers=#{meet_point.latitude}%2C#{meet_point.longitude}" %>
+    <div>
+      <span>No car available in that area.</span>
+    </div>
   <% end %>
-  <% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
-  <%= image_tag my_url %>
+
+  <% if @count == 1%>
+    <% pin_meet_point = @pin_meet_point %>
+    <% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+    <% my_url += "&markers=#{pin_meet_point.latitude}%2C#{pin_meet_point.longitude}"  %>
+    <% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
+    <%= image_tag my_url %>
+  <% else %>
+    <% my_url = "http://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+    <% @pin_meet_point.each do |meet_point| %>
+    <% my_url += "&markers=#{meet_point.latitude}%2C#{meet_point.longitude}" %>
+    <% end %>
+    <% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
+    <%= image_tag my_url %>
   <% end %>
 </div>
-<<<<<<< HEAD
-<script>
-$(document).ready(function() {
-  var current_lat;
-  var current_lng;
-
-  $.ajax({
-    method: 'GET',
-    url: '/api/locations/'
-   }).done(function(result){
-     if (navigator.geolocation) {
-       navigator.geolocation.getCurrentPosition(function(position) {
-           var current_lat = position.coords.latitude;
-           var current_lng = position.coords.longitude;
-           var rad = function(x) {
-           return x * Math.PI / 180;
-           };
-
-           var R = 6378137; // Earth’s mean radius in meter
-           for (var i = 0; i < result.length; i++) {
-             var dLat = rad(result[i].latitude - current_lat);
-             var dLong = rad(result[i].longitude - current_lng);
-             var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-             Math.cos(rad(current_lat)) * Math.cos(rad(result[i].latitude)) *
-             Math.sin(dLong / 2) * Math.sin(dLong / 2);
-             var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-             var d = R * c;
-             var km = d / 1000;
-
-
-             $('#' + result[i].user_id).html(km.toFixed(2));
-          };
-        });
-      };
-  });
-});
-</script>
