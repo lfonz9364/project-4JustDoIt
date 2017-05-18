@@ -136,12 +136,18 @@ $(document).ready(function() {
     method: 'GET',
     url: '/api/locations/'
    }).done(function(result){
+     console.log('test');
+     console.log(result);
+     console.log(result.length);
 
      if (navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(function(position) {
 
            var current_lat = position.coords.latitude;
            var current_lng = position.coords.longitude;
+
+           console.log(current_lat);
+           console.log(current_lng);
 
            var rad = function(x) {
            return x * Math.PI / 180;
@@ -157,7 +163,7 @@ $(document).ready(function() {
              var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
              var d = R * c;
              var km = d / 1000;
-
+            //  console.log('distance is ' + km.toFixed(2) + ' km');
              $('#' + result[i].user_id).html(km.toFixed(2));
           };
         });
