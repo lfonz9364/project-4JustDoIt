@@ -52,7 +52,6 @@
     </form>
     <a href="/message">Reset Filter</a>
   </div>
-  <%counter = 0%>
   <% @cars.each do |car|%>
     <% if car.seat_number > car.passenger.length %>
           <div class="pass_bulletin">
@@ -117,7 +116,6 @@
         <button class="submit">Submit</button>
         <a class="return" href="/home">Back</a>
       </form>
-      <% counter += 1 %>
     <% end %>
   <% end %>
   <% if @count == 1%>
