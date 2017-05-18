@@ -97,9 +97,7 @@
               <a href="/cars/join/<%= car.id %>">I want to join</a>
             <% end %>
         </div>
-
         <p>You are currently <span id=<%=car.user.id%> class="distance">under construction</span>KM to meeting place</p>
-
       <form action="/map" method="get">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="meeting_point" value="<%=car.meeting_point%>">
@@ -125,9 +123,12 @@
   <%= image_tag my_url %>
   <% end %>
 </div>
-<<<<<<< HEAD
+
+
 <script>
+
 $(document).ready(function() {
+
   var current_lat;
   var current_lng;
 
@@ -135,10 +136,19 @@ $(document).ready(function() {
     method: 'GET',
     url: '/api/locations/'
    }).done(function(result){
+     console.log('test');
+     console.log(result);
+     console.log(result.length);
+
      if (navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(function(position) {
+
            var current_lat = position.coords.latitude;
            var current_lng = position.coords.longitude;
+
+           console.log(current_lat);
+           console.log(current_lng);
+
            var rad = function(x) {
            return x * Math.PI / 180;
            };
@@ -153,12 +163,13 @@ $(document).ready(function() {
              var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
              var d = R * c;
              var km = d / 1000;
-
-
+            //  console.log('distance is ' + km.toFixed(2) + ' km');
              $('#' + result[i].user_id).html(km.toFixed(2));
           };
         });
       };
+
   });
 });
+
 </script>
