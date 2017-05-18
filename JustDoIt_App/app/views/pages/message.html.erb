@@ -57,7 +57,8 @@
           <div class="pass_bulletin">
             <br>
             <span>Driver ID:
-              <span><%= car.user.id%></span>
+              <span class='driver-id'><%= car.user.id%></span>
+
             </span>
             <br>
             <span class="driver">Driver:
@@ -108,6 +109,59 @@
         <button class="submit">Submit</button>
         <a class="return" href="/home">Back</a>
       </form>
+
+      <script>
+        var CalcDistance = function() {
+
+          var current_lat;
+          var current_lng;
+
+          // var carIdArray = [];
+          var carId = $('.driver-id').text();
+          $('.driver-id').html('');
+          // carIdArray.push($('.driver-id').text());
+          console.log(carId);
+
+          // console.log(carIdArray)
+          // carId.each(function(id){
+            $.ajax({
+              method: 'GET',
+              url: '/api/locations/',
+              data: {id: carId}
+             }).done(function(result){
+               console.log('test');
+               console.log(result);
+               if (navigator.geolocation) {
+                 navigator.geolocation.getCurrentPosition(function(position) {
+
+                     var current_lat = position.coords.latitude;
+                     var current_lng = position.coords.longitude;
+
+                     console.log(current_lat);
+                     console.log(current_lng);
+
+                     var rad = function(x) {
+                     return x * Math.PI / 180;
+                     };
+
+                     var R = 6378137; // Earth’s mean radius in meter
+                    //  for (var i = 0; i < result.length; i++) {
+                     var dLat = rad(result.latitude - current_lat);
+                     var dLong = rad(result.longitude - current_lng);
+                     var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                     Math.cos(rad(current_lat)) * Math.cos(rad(result.latitude)) *
+                     Math.sin(dLong / 2) * Math.sin(dLong / 2);
+                     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                     var d = R * c;
+                     var km = d / 1000;
+                     console.log('distance is ' + km.toFixed(2) + ' km');
+                     $('.distance').html(km.toFixed(2));
+                  });
+                };
+              });
+          };
+        CalcDistance();
+      </script>
     <% end %>
   <% end %>
   <% if @count == 1%>
