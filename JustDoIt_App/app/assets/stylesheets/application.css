@@ -14,21 +14,21 @@
  *= require_self
  */
 
-body {
+/*body {
   text-align: center;
   background-image: url("https://ga-core.s3.amazonaws.com/cms/files/files/000/002/549/original/papercraft-27ee990be441ec48fa99a57ccd5f363f.png");
   font-family: 'Space Mono', monospace;
 }
 
 #page-wrap {
-  /*width: 800px;*/
+  width: 800px;
   height: 645px;
   margin: 0 auto;
   text-align: center;
-  /*background-color: rgb(69, 90, 100);*/
-  font-family: 'Space Mono', monospace;
+  background-color: rgb(69, 90, 100);
+  font-family: 'Space Mono', monospace;*/
 
-}
+/*}
 
 section {
   margin-top: 40px
@@ -44,7 +44,7 @@ h2 {
    margin-top: 100px;
  }
 
- .filter {
+ .filter {*/
   /*float: right;
   margin-top: -47px;
   margin-left: 530px;*/
@@ -57,7 +57,7 @@ h2 {
   margin-left: 536px;*/
 }
 
- .email-login, .password-login {
+ /*.email-login, .password-login {
   width: 122px;
   height: 24px;
   font-size: larger;
@@ -110,14 +110,14 @@ input {
    border: #009688;
    background-color: rgb(229, 27, 36);
    border-radius: 6px;
- }
+ }*/
  /*.back-link {
    margin-left: -160px;
  }*/
 
  /*================*/
  /*user session* application.html.erb */
-
+/*
  .welcome-user {
    float: left;
    color: black;
@@ -224,12 +224,12 @@ a:hover {
   font-size: 18px;
   background-color: rgba(229, 57, 53, 0.78);
   color: white;
-}
+}*/
 
 /*Passenger bulletin board*/
 /*============================ */
 
-.msg_container {
+/*.msg_container {
   display: inline-block;
   text-align: left;
   background-color: rgba(229, 57, 53, 0.78);
@@ -310,7 +310,7 @@ img {
   border-radius: 6px;
   border: #009688;
   text-decoration: none;
-}
+}*/
 
 
 

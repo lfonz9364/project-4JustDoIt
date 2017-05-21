@@ -1,27 +1,31 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
 
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><i class="fa fa-home" aria-hidden="true"></i> Car Pool</a>
+    </div>
 
-<div id="page-wrap">
-
-  <section>
-    <h1>Welcome To WDI Conference</h1>
-  </section>
-
-  <div class="login-pg">
-      <%= form_tag '/session', method: 'post' do %>
-      <br>
-      <label class="email"for="">Email</label>
-      <br>
-      <input class="email-login"type="text" name="email" placeholder="username">
-      <br>
-      <label class="password-label"for="">Password</label>
-      <br>
-      <input class="password-login"type="password" name="password" placeholder="password">
-      <br>
-      <br>
-      <button class="login-button">Login</button>
-      <% end %>
-      <br>
-    <a class="sign-link"href="/users/new">Signup</a>
-  </div>
-
-</div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/users/new">Sign Up</a><span class="sr-only">(current)</span></a></li>
+      </ul>
+      <div class="navbar-form navbar-right">
+        <div class="form-group">
+          <%= form_tag '/session', method: 'post' do %>
+            <label class="email"name="email">Email</label>
+            <input class="form-control"type="text" name="email" placeholder="Username">
+            <label name="password">Password</label>
+            <input class="form-control"type="password" name="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Login</button>
+          <% end %>
+      </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

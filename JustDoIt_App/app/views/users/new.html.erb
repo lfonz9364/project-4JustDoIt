@@ -1,36 +1,38 @@
-<h1>Register For Account</h1>
+<div class="container">
+  <h1>Register For Account</h1>
 
+  <form class="register" action="/users" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-<form class="register" action="/users" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label class="name-md"for="">First Name</label>
+    <br>
+    <input type="text" name="first_name">
+    <br>
+    <label class="name-md"for="">Last Name</label>
+    <br>
+    <input type="text" name="last_name">
+    <br>
+    <label class="short-name"for="">Email</label>
+    <br>
+    <input type="text" name="email">
+    <br>
+    <label class="phone-name"for="">Phone</label>
+    <br>
+    <input type="text" name="phone">
+    <br>
+    <label class="fixed-name"for="">Company</label>
+    <br>
+    <input type="text" name="company">
+    <br>
+    <label class="fixed-name"for="">Password</label>
+    <br>
+    <input type="password" name="password" value="">
+    <br>
+    <br>
+    <button class="fixed-btn">Create account</button>
+    <br>
+    <br>
+    <a href="/" class="back-link">Back</a>
+  </form>
 
-  <label class="name-md"for="">First Name</label>
-  <br>
-  <input type="text" name="first_name">
-  <br>
-  <label class="name-md"for="">Last Name</label>
-  <br>
-  <input type="text" name="last_name">
-  <br>
-  <label class="short-name"for="">Email</label>
-  <br>
-  <input type="text" name="email">
-  <br>
-  <label class="phone-name"for="">Phone</label>
-  <br>
-  <input type="text" name="phone">
-  <br>
-  <label class="fixed-name"for="">Company</label>
-  <br>
-  <input type="text" name="company">
-  <br>
-  <label class="fixed-name"for="">Password</label>
-  <br>
-  <input type="password" name="password" value="">
-  <br>
-  <br>
-  <button class="fixed-btn">Create account</button>
-  <br>
-  <br>
-  <a href="/" class="back-link">Back</a>
-</form>
+</div>
