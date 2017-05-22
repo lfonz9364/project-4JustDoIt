@@ -9,43 +9,38 @@
 
       <div class="input-group">
         <label class="input-group-addon" name="seat_number" id="basic-adon1">Available Seats</label>
-        <input type="text" class="form-control" name="seat_number"placeholder="Enter number of seats left" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" name="seat_number" placeholder="Enter number of seats left" aria-describedby="basic-addon1">
       </div>
       <br>
 
       <div class="input-group">
         <label class="input-group-addon" name="meeting_point" id="basic-adon1">Meeting Point</label>
-        <input id="geocomplete" type="text" class="form-control" name="meeting_point"placeholder="Enter preferred meeting point" aria-describedby="basic-addon1" onclick="geoInput()">
+        <input id="geocomplete" type="text" class="form-control" name="meeting_point" placeholder="Enter preferred meeting point" aria-describedby="basic-addon1" onclick="geoInput()">
       </div>
       <br>
 
-      <div class="input-group">
-        <label name="smoke">Smoke</label>
-        <br>
-          <label class="checkbox-inline">
-            <input name="smoker"type="checkbox" id="inlineCheckbox1" value="option1"> No
-          </label>
-          <label class="checkbox-inline">
-            <input name="smoke"type="checkbox" id="inlineCheckbox2" value="option2"> Yes
-          </label>
-      </div>
+        <label>Smoker Friendly</label>
+        <select name="smoker_friendly">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
       <br>
 
       <div class="input-group">
         <label class="input-group-addon" name="date" id="basic-adon1">Date</label>
-        <input type="date" min="2017-10-09" max="2017-10-15" class="form-control" name="date"placeholder="Select Date" aria-describedby="basic-addon1">
+        <input type="date" min="2017-10-09" max="2017-10-15" class="form-control" name="date" placeholder="Select Date" aria-describedby="basic-addon1">
       </div>
       <br>
 
       <div class="input-group">
         <label class="input-group-addon" name="time" id="basic-adon1">Time</label>
-        <input type="time" min="2017-10-09" max="2017-10-15" class="form-control" name="date"placeholder="Select Time" aria-describedby="basic-addon1">
+        <input type="time" class="form-control" name="time" placeholder="Select Time" aria-describedby="basic-addon1">
       </div>
       <br>
 
       <div class="input-group">
         <label class="input-group-addon" name="description" id="basic-adon1">Additional Details</label>
-        <input name="description" rows="8" cols="80" class="form-control" name="date"placeholder="Select Date" aria-describedby="basic-addon1">
+        <input name="description" rows="8" cols="80" class="form-control" placeholder="Add details" aria-describedby="basic-addon1">
       </div>
       <br>
       <button class="make-post">Post</button>

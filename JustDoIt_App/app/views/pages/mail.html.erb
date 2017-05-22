@@ -4,11 +4,12 @@
   <form action="/pages/mail/<%= params[:id] %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <label name="subject">Subject:</label>
-      <input name="subject"type="text" class="form-control" placeholder="Text input" laceholder="Please input a subject">
+      <input name="subject" type="text" class="form-control" placeholder="Email Subject">
       <label name="message">Message:</label>
-      <textarea name="message"class="form-control" rows="3" placeholder="Write message here"></textarea>
+      <textarea name="message" class="form-control" rows="3" placeholder="Write message here"></textarea>
       <button>Send</button>
   </form>
+  
   <% if current_user.car != nil %>
     <a href="/cars/show/<%= current_user.car.id %>">Carpool Info</a>
   <% else %>

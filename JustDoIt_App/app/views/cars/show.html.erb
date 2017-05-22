@@ -1,47 +1,47 @@
 <div class="container">
-
-  <div class="passenger-bulletin">
-    <span>Driver:
-      <%= @car.user.first_name %>
-    </span>
-    <span>Additional Details:
-      <%= @car.description %>
-    </span>
-    <span>No. of Seat Available:
-      <%= @car.seat_number - @car.passenger.length %>
-    </span>
-    <span>Meeting Place:
-      <%= @car.meeting_point %>
-    </span>
-    <span>
-      Smoker Friendly:
-      <%= @car.smoker_friendly%>
-    </span>
-    <span>Date:
-      <%= @car.date_time.strftime("%d-%B-%Y") %>
-    </span>
-    <span>Time:
-      <%= @car.date_time.strftime("%I:%M%p") %>
-    </span>
-    <a href="/cars/edit/<%= @car.id %>">Edit</a>
-    <a href="/cars/destroy" data-method="delete">Delete</a>
-    <div class="passenger-area">
-      <span>
-        Passenger List:
-        <% @passengers.each do |passenger| %>
-        <span><%= passenger.user.first_name %></span>
-        <a href="/pages/mail/<%= passenger.user.id %>">Send Message</a>
-        <a href="/cars/remove/<%= passenger.id %>">Remove Passenger</a>
-        <% end %>
+  <div class="jumbotron">
+    <div class="passenger-bulletin">
+      <span>Driver:
+        <%= @car.user.first_name %>
       </span>
+      <span>Additional Details:
+        <%= @car.description %>
+      </span>
+      <span>No. of Seat Available:
+        <%= @car.seat_number - @car.passenger.length %>
+      </span>
+      <span>Meeting Place:
+        <%= @car.meeting_point %>
+      </span>
+      <span>
+        Smoker Friendly:
+        <%= @car.smoker_friendly%>
+      </span>
+      <span>Date:
+        <%= @car.date_time.strftime("%d %B %Y") %>
+      </span>
+      <span>Time:
+        <%= @car.date_time.strftime("%I:%M %p") %>
+      </span>
+      <a href="/cars/edit/<%= @car.id %>">Edit</a>
+      <a href="/cars/destroy" data-method="delete">Delete</a>
+      <div class="passenger-area">
+        <span>
+          Passenger List:
+          <% @passengers.each do |passenger| %>
+          <span><%= passenger.user.first_name %></span>
+          <a href="/pages/mail/<%= passenger.user.id %>">Send Message</a>
+          <a href="/cars/remove/<%= passenger.id %>">Remove Passenger</a>
+          <% end %>
+        </span>
 
-      <div class="">
+        <div class="">
 
+        </div>
+
+        <a href="/home">Back</a>
       </div>
-
-      <a href="/home">Back</a>
     </div>
+
   </div>
-
-
 </div>
