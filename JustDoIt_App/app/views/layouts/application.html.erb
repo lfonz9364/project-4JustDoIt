@@ -19,11 +19,30 @@
   <body>
     <% if logged_in? %>
       <%= form_tag '/session', method: :delete do %>
-      <input type="hidden" class="id" data-id=<%= current_user.id%> >
-        <nav class="login-nav">
-          <p class="welcome-user">Welcome <span class="initial"><%= current_user.first_name %></span></p>
-          <button class="logout-btn">Logout</button>
-        </nav>
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><i class="fa fa-home" aria-hidden="true"></i> Car Pool</a>
+            <p class="navbar-brand"><i class="fa fa-user" aria-hidden="true"></i> Loggedin as: <%= current_user.first_name %></p>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="navbar-form navbar-right">
+              <input type="hidden" class="id" data-id=<%= current_user.id%> >
+              <button type="submit" class="btn btn-default" class="logout-btn">Logout</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
       <% end %>
     <% end %>
 
