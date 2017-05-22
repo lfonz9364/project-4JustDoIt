@@ -1,4 +1,5 @@
 # README
+###### Created by Alfons Caroles, Marta Scaramella, Gatluak Tholbok and Barry Tabios
 
 # Conference Carpooling
 This site is currently hosted on Heroku https://mysterious-bastion-51155.herokuapp.com/;
