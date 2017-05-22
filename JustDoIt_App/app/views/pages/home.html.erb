@@ -1,17 +1,22 @@
 
-<div class="post-info">
-  <h1 class="home-h1">Car Pool</h1>
 
-  <% if current_user.passenger == nil && current_user.car == nil %>
-    <p class="post-car">
-      <a href="/cars/new">Seats Available</a>
-    </p>
-    <p class="give-lift">
-      <a href="/message">Need Car Pool</a>
-    </p>
-  <% elsif current_user.car != nil %>
-    <a href="/cars/show/<%= current_user.car.id %>">Carpool Info</a>
-  <% else %>
-    <a href="/message">Cars Available</a>
-  <% end %>
+<div class="container">
+  <div class="jumbotron">
+
+    <h2>Welcome to Your Carpool Info-Board!</h2>
+
+
+    <% if current_user.passenger == nil && current_user.car == nil %>
+
+      <p><a class="btn btn-primary" href="/cars/new"role="button">Available Seats</a></p>
+
+      <p><a class="btn btn-primary" href="/message">Need Car Pool</a>
+      </p>
+
+    <% elsif current_user.car != nil %>
+      <a href="/cars/show/<%= current_user.car.id %>">Carpool Info</a>
+    <% else %>
+      <a href="/message">Cars Available</a>
+    <% end %>
+  </div>
 </div>
