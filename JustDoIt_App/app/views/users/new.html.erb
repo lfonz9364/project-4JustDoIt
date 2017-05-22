@@ -1,38 +1,65 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><i class="fa fa-home" aria-hidden="true"></i> Car Pool</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="navbar-form navbar-right">
+        <button type="submit" class="btn btn-default"><a href="/" class="back-link">Back</a></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
 <div class="container">
-  <h1>Register For Account</h1>
+
+  <div class="page-header">
+    <h1>Register Your Account Here</h1>
+  </div>
 
   <form class="register" action="/users" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-    <label class="name-md"for="">First Name</label>
+    <div class="input-group">
+      <label class="input-group-addon" name="first_name" id="basic-adon1">First Name</label>
+      <input type="text" class="form-control" name="first_name"placeholder="Enter Your First Name" aria-describedby="basic-addon1">
+    </div>
     <br>
-    <input type="text" name="first_name">
+    <div class="input-group">
+      <label class="input-group-addon" name="last_name" id="basic-adon1">Last Name</label>
+      <input type="text" class="form-control" name="last_name"placeholder="Enter Your Last Name" aria-describedby="basic-addon1">
+    </div>
     <br>
-    <label class="name-md"for="">Last Name</label>
+    <div class="input-group">
+      <label class="input-group-addon" name="email" id="basic-adon1">Email</label>
+      <input type="text" class="form-control" name="email"placeholder="Enter Your Email Here" aria-describedby="basic-addon1">
+    </div>
     <br>
-    <input type="text" name="last_name">
-    <br>
-    <label class="short-name"for="">Email</label>
-    <br>
-    <input type="text" name="email">
-    <br>
-    <label class="phone-name"for="">Phone</label>
-    <br>
-    <input type="text" name="phone">
-    <br>
-    <label class="fixed-name"for="">Company</label>
-    <br>
-    <input type="text" name="company">
-    <br>
-    <label class="fixed-name"for="">Password</label>
-    <br>
-    <input type="password" name="password" value="">
-    <br>
-    <br>
-    <button class="fixed-btn">Create account</button>
-    <br>
-    <br>
-    <a href="/" class="back-link">Back</a>
-  </form>
+    <div class="input-group">
+      <label class="input-group-addon" name="phone" id="basic-adon1">Phone</label>
+      <input type="text" class="form-control" name="phone"placeholder="Enter Your Phone" aria-describedby="basic-addon1">
+    </div>
 
+    <br>
+    <div class="input-group">
+      <label class="input-group-addon" name="company" id="basic-adon1">Company</label>
+      <input type="text" class="form-control" name="company"placeholder="Enter Your First Name" aria-describedby="basic-addon1">
+    </div>
+    <br>
+    <div class="input-group">
+      <label class="input-group-addon" name="password" id="basic-adon1">Password</label>
+      <input type="password" class="form-control" name="password"placeholder="Enter Your Password" aria-describedby="basic-addon1">
+    </div>
+    <br>
+    <button>Create Account</button>
+  </form>
 </div>
