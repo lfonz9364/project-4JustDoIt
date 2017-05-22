@@ -27,7 +27,6 @@ function getDistance () {
              var d = R * c;
              var km = d / 1000;
 
-
              $('#' + result[i].user_id).html('You are currently ' + km.toFixed(2) + ' KM to meeting place');
           };
         });
