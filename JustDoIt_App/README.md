@@ -39,5 +39,3 @@ We decide to cover the transport segment. With our app all the people attending 
 ### Future Features
 * Possibility for passenger and owner to chat privately;
 * Passenger-car distance on each post;
-
-## Unresolved issues
