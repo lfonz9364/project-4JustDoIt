@@ -61,10 +61,6 @@
       <% if car.seat_number > car.passenger.length %>
             <div class="pass_bulletin">
               <br>
-              <span>Driver ID:
-                <span><%= car.user.id%></span>
-              </span>
-              <br>
               <span class="driver">Driver:
                 <%= car.user.first_name %>
               </span>
@@ -104,7 +100,7 @@
               <% end %>
           </div>
 
-          <span id="<%=car.user.id%>" class="distance"></span>
+          <span><span id="<%=car.user.id%>" class="distance"></span>km away</span>
 
           <form action="/map" method="get">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
