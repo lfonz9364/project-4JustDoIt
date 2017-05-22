@@ -25,7 +25,7 @@ We decide to cover the transport segment. With our app all the people attending 
 ![alt tag](https://raw.githubusercontent.com/lfonz9364/project-4JustDoIt/master/JustDoIt_App/app/assets/images/wireframe.png)
 
 ## Technologies Used
-```HTML5``` ```CSS3``` ````JavaScript``` ```jQuery 4.3.1``` ```Ruby 2.3.3``` ```Rails 5.0.2``` ```geocoder``` ```HTML5 geolocation``` ```POSTGREsql``` ```materialize```
+```HTML5``` ```CSS3``` ```JavaScript``` ```jQuery 4.3.1``` ```Ruby 2.3.3``` ```Rails 5.0.2``` ```geocoder``` ```HTML5 geolocation``` ```POSTGREsql``` ```materialize```
 
 #### Features:
 * Log-in and sign-in
@@ -39,5 +39,3 @@ We decide to cover the transport segment. With our app all the people attending 
 ### Future Features
 * Possibility for passenger and owner to chat privately;
 * Passenger-car distance on each post;
-
-## Unresolved issues
