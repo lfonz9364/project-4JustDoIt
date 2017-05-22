@@ -1,4 +1,5 @@
-<div class="msg_container">
+<div class="container">
+  <div class="jumbotron">
   <% if @current_car.present? %>
     <div class="pass_bulletin">
       <h1>Current car selected</h1>
@@ -41,7 +42,7 @@
   <% end %>
 
   <div class="filter_suburb">
-    <h1>Filter Suburbs</h1>
+    <h2>Filter Suburbs</h2>
 
     <form class="filtering" action="/message">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -121,18 +122,23 @@
     </div>
   <% end %>
 
-  <% if @count == 1%>
-    <% pin_meet_point = @pin_meet_point %>
-    <% my_url = "https://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
-    <% my_url += "&markers=#{pin_meet_point.latitude}%2C#{pin_meet_point.longitude}"  %>
-    <% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
-    <%= image_tag my_url %>
-  <% else %>
-    <% my_url = "https://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
-    <% @pin_meet_point.each do |meet_point| %>
-    <% my_url += "&markers=#{meet_point.latitude}%2C#{meet_point.longitude}" %>
-    <% end %>
-    <% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
-    <%= image_tag my_url %>
-  <% end %>
+  <div class="row">
+    <div class="col-lg-4 col-md-4">
+      <% if @count == 1%>
+        <% pin_meet_point = @pin_meet_point %>
+        <% my_url = "https://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+        <% my_url += "&markers=#{pin_meet_point.latitude}%2C#{pin_meet_point.longitude}"  %>
+        <% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
+        <%= image_tag my_url %>
+      <% else %>
+        <% my_url = "https://maps.google.com/maps/api/staticmap?size=1000x850&sensor=false&zoom=10" %>
+        <% @pin_meet_point.each do |meet_point| %>
+        <% my_url += "&markers=#{meet_point.latitude}%2C#{meet_point.longitude}" %>
+        <% end %>
+        <% my_url += '&key=AIzaSyBn7aVoJ5DG6o1oYaDdc8XAsApqlAtHaTg' %>
+        <%= image_tag my_url %>
+      <% end %>
+    </div>
+  </div>
+</div>
 </div>

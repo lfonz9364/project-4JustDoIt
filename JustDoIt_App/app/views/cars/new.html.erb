@@ -1,38 +1,59 @@
 
 
 <div class="container">
-  <form action="/cars" method="post">
-    <h1>Driver Registration</h1>
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <label>Seats Available</label>
+  <div class="jumbotron">
+    <form action="/cars" method="post">
+      <h3>Driver Registration</h3>
+      <hr>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+      <div class="input-group">
+        <label class="input-group-addon" name="seat_number" id="basic-adon1">Available Seats</label>
+        <input type="text" class="form-control" name="seat_number"placeholder="Enter number of seats left" aria-describedby="basic-addon1">
+      </div>
+      <br>
+
+      <div class="input-group">
+        <label class="input-group-addon" name="meeting_point" id="basic-adon1">Meeting Point</label>
+        <input id="geocomplete" type="text" class="form-control" name="meeting_point"placeholder="Enter preferred meeting point" aria-describedby="basic-addon1" onclick="geoInput()">
+      </div>
+      <br>
+
+      <div class="input-group">
+        <label name="smoke">Smoke</label>
+        <br>
+          <label class="checkbox-inline">
+            <input name="smoker"type="checkbox" id="inlineCheckbox1" value="option1"> No
+          </label>
+          <label class="checkbox-inline">
+            <input name="smoke"type="checkbox" id="inlineCheckbox2" value="option2"> Yes
+          </label>
+      </div>
+      <br>
+
+      <div class="input-group">
+        <label class="input-group-addon" name="date" id="basic-adon1">Date</label>
+        <input type="date" min="2017-10-09" max="2017-10-15" class="form-control" name="date"placeholder="Select Date" aria-describedby="basic-addon1">
+      </div>
+      <br>
+
+      <div class="input-group">
+        <label class="input-group-addon" name="time" id="basic-adon1">Time</label>
+        <input type="time" min="2017-10-09" max="2017-10-15" class="form-control" name="date"placeholder="Select Time" aria-describedby="basic-addon1">
+      </div>
+      <br>
+
+      <div class="input-group">
+        <label class="input-group-addon" name="description" id="basic-adon1">Additional Details</label>
+        <input name="description" rows="8" cols="80" class="form-control" name="date"placeholder="Select Date" aria-describedby="basic-addon1">
+      </div>
+      <br>
+      <button class="make-post">Post</button>
+      <br>
+    </form>
     <br>
-    <input type="text" name="seat_number">
-    <br>
-    <label>Meeting Point</label>
-    <br>
-    <input id="geocomplete" type="text" name="meeting_point" onclick="geoInput()">
-    <br>
-    <label>Smoking</label>
-      <select name="smoker_friendly">
-      <option value="No">No</option>
-      <option value="Yes">Yes</option>
-    </select>
-    <br>
-    <label>date</label>
-    <br>
-    <input type="date" name="date" min="2017-10-09" max="2017-10-15">
-    <br>
-    <label>time</label>
-    <br>
-    <input type="time" name="time">
-    <br>
-    <label>Additional Details</label>
-    <br>
-    <textarea name="description" rows="8" cols="80"></textarea>
-    <br>
-    <button class="make-post">Post</button>
-  </form>
-  <button class="cancel-post">
-    <a href="/home">Cancel</a>
-  </button>
+    <button class="cancel-post">
+      <a href="/home">Cancel</a>
+    </button>
+  </div>
 </div>
